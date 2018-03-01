@@ -1,0 +1,48 @@
+title: oschvr.com
+url: https://oschvr.com
+description: "personal blog | vr, ai, crypto."
+show_downloads: true
+google_analytics: UA-73304631-6
+theme: jekyll-theme-hacker
+plugins: [jekyll-paginate-v2]
+pagination:
+  enabled: true
+  debug: true
+  collection: 'articles'
+  per_page: 6
+  permalink: /posts/:num/
+  title: ':title - page :num'
+  limit: 0
+  sort_field: date
+  sort_reverse: true
+  #category: /posts/:category
+  #tag: /posts/:tags
+  #locale: /posts/:locale
+autopages:
+  enabled: false
+collections: 
+  articles:
+    output: true
+    permalink: /posts/:path
+  pages:
+    output: true
+    permalink: /pages/:path
+  projects:
+    output: true
+    permalink: /projects/:path
+defaults:
+  scope:
+    path: ""
+    type: "articles"
+  values:
+    layout: "post"
+  scope:
+    path: ""
+    type: "pages"
+  values:
+    layout: "page"
+  scope:
+    path: ""
+    type: "projects"
+  values:
+    layout: "post"
