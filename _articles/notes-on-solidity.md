@@ -6,6 +6,8 @@ author: oschvr
 mail: os@oschvr.com
 excerpt: Solidity is a contract-oriented, high-level language whose syntax is similar to that of JavaScript and it is designed to target the Ethereum Virtual Machine (EVM).
 tags: solidity, smart contract, ethereum, eth, token
+lang: en_US
+image: https://s3-us-west-2.amazonaws.com/oscarchavez/posts/notes-on-solidity/images/large/ethereum-visual-studio-featured.jpg
 ---
 
 # Notes on Solidity

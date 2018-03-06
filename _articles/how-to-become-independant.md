@@ -6,6 +6,8 @@ author: oschvr
 mail: os@oschvr.com
 excerpt: In here I try to explain why, and (hopefully) answer how to become independant.
 tags: independant, cool, entrepreneur, nice
+lang: en_US
+image: https://s3-us-west-2.amazonaws.com/oscarchavez/posts/how-to-become-independent/images/large/sf.jpg
 ---
 
 ### A 'short' post by [@oschvr](http://twitter.com/oschvr) 

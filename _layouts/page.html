@@ -2,9 +2,16 @@
 layout: default
 ---
 
+<small>{{ page.date | date: "%-d %B %Y" }}</small>
 <h1>{{ page.title }}</h1>
-<hr>
 
 {{content}}
 
 <hr>
+
+<div 
+  class="just-comments"
+  data-allowguests="true"
+  data-apikey="f290dd5f-d7c4-485b-aa30-016b71e0667f">
+</div>
+<script async src="https://just-comments.com/w.js"></script>

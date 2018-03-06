@@ -1,16 +1,20 @@
 ---
 layout: page
 title: About
+author: oschvr
+image: https://oschvr.com/static/oscarchavez/img/oscar.jpg
 ---
 
+![os](https://oschvr.com/static/oscarchavez/img/oscar.jpg)
+
 My name is Oscar Chavez
-I am a mexican entrepreneur, software engineer and sometimes digital artist. clap
+I am a mexican entrepreneur, software engineer and sometimes digital artist. :clap:
 
-I'm currently working as Sales Dept, Project Manager, Lead Web Fullstack Developer and Unity3D Developer in a VR Startup I cofounded with Patrick. Please visit VR3.io for more info. eyes
+I'm currently working as Sales Dept, Project Manager, Lead Web Fullstack Developer and Unity3D Developer in a VR Startup I cofounded with Patrick. Please visit VR3.io for more info. :eyes:
 
-I also oversee the sponsorships, meetups and general management of the first Mexican Community for VR/AR Developers and Enthusiasts. Go to MXVR to learn more.  video_game
+I also oversee the sponsorships, meetups and general management of the first Mexican Community for VR/AR Developers and Enthusiasts. Go to MXVR to learn more.  :video_game:
 
-Here's a list of the main tools I use for work, most of them are free or have free trials tada :
+Here's a list of the main tools I use for work, most of them are free or have free trials :tada:
 
 Ruby on Rails Very complete web app framework
 Heroku Powerful platform for application hosting
@@ -22,11 +26,11 @@ Transmit Great FTP Manager
 Postico Very easy-to-use PostgreSQL Manager
 ASANA Project Management in the Cloud
 Adobe Creative Cloud (Ps, Ai, Ae) Creative Suite
-Here's also a list of a couple of personal projects I've made that are live clap
+Here's also a list of a couple of personal projects I've made that are live :clap:
 
 MXVR.co MXVR (Mexico Virtual Reality) homepage in VR (Aframe + ReactJS) [see it on your smartphone phone]
 catalina.be belgian artist homepage (AngularJS)
-While my studies merged technology with art, I always enjoy taking deep dive into globalization, markets, politics, economy, finance and of course, computer science computer. Learning, reading and consulting the internet for very specific information is one of my greatest privileges as a modern era individual. While for me it's mostly technical books, once in a while I take delight in a great novel. grin
+While my studies merged technology with art, I always enjoy taking deep dive into globalization, markets, politics, economy, finance and of course, computer science computer. Learning, reading and consulting the internet for very specific information is one of my greatest privileges as a modern era individual. While for me it's mostly technical books, once in a while I take delight in a great novel. :grin:
 
 I believe in the betterment of the human race through technology and seriously consider that the roots to the best era of our times are near. space_invader
 

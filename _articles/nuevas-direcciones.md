@@ -7,6 +7,8 @@ mail: os@oschvr.com
 excerpt: Sobre el viaje a Europa
 tags: europe, programmer, mexico, travel
 img: https://oschvr.com/static/oscarchavez/img/europe/eur6.jpg
+lang: es_MX
+image: https://s3-us-west-2.amazonaws.com/oscarchavez/posts/nuevas-direcciones/images/large/eur4.jpg
 ---
 
 ### Europa 2016 

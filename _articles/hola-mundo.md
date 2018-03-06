@@ -6,9 +6,11 @@ author: oschvr
 mail: os@oschvr.com
 excerpt: Primer post del blog
 tags: development, mexico, jekyll, markdown
+lang: es_MX
+image: https://s3-us-west-2.amazonaws.com/oscarchavez/posts/hola-mundo/images/large/mexico.jpg
 ---
 
-Hola ! Por primera vez voy a utilizar este __blog__. 
+Hola ! Por primera vez voy a utilizar este __blog__. :clap: 
 
 Después de unos 2 meses _(años)_ de esfuerzo (no continuo), por fin creo que está listo para ver la luz. 
 

@@ -6,7 +6,8 @@ author: oschvr
 mail: os@oschvr.com
 excerpt: ICO stands for Initial Coin Offering, a period of time for early investors in a cryptocurrency o digital asset venture to buy coins or tokens for a fixed price.
 tags: solidity, ethereum, ico, coin, token, crowdsale
-locale: en
+lang: en_US
+image: https://s3-us-west-2.amazonaws.com/oscarchavez/posts/what-is-an-ico/images/large/bitcoin-securities-ico.png
 ---
 
 What the hell is an **ICO** ? And why the *f#ck* does something like [Tezos](https://www.tezos.com/) fundraised more than *65,697* BTC and *361,122* ETH, which in total stands for around: 

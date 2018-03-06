@@ -6,7 +6,8 @@ author: oschvr
 mail: os@oschvr.com
 excerpt: Un tutorial sobre como hacer un proxy de Tor con un Raspberry Pi 2 y Raspbian Jessie, para navegar anon.
 tags: tor, raspberry, proxy, raspberry pi, pi, tor pi, raspian
-img: https://oschvr.com/static/oscarchavez/img/torproxy/rpi.jpg
+lang: es_MX
+image: https://s3-us-west-2.amazonaws.com/oscarchavez/posts/como-hacer-un-proxy-de-tor-con-un-raspberry-pi/images/large/tor-network-.jpg
 ---
 
 ![cover](https://oschvr.com/static/oscarchavez/img/torproxy/cover.png)

@@ -7,12 +7,12 @@ pagination:
 {% for article in paginator.posts %}
   <article class="{% if forloop.first %}first{% elsif forloop.last %}last{% else %}middle{% endif %}">
 		<div class="article-head">
-			<small class="date">{{ article.date | date: "%b %d, %Y" }}</small>
+			<small class="date">{{ article.date | date: "%b %d, %Y" }} | :mx: | :speech_balloon: | :clap: |</small>
 			<h2 class="title"><a href="{{ site.url }}{{ article.url }}">{{ article.title }}</a></h2>
 		</div>
 		<p class="excerpt">{{ article.excerpt }}</p>
     	<div>
-				<a href="{{ site.url }}{{ article.url }}"><img src="{{ article.img }}"></a>
+				<a href="{{ site.url }}{{ article.url }}"><img class= "post-img" src="{{ article.image }}"></a>
 			</div>
 		<!-- <a href="{{ site.url }}{{ article.url }}" class="full-post-link js-pjax">Read more</a>	 -->
 	</article>

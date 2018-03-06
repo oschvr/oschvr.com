@@ -6,6 +6,8 @@ author: oschvr
 mail: os@oschvr.com
 excerpt: General considerations for building a Trading System that includes a Trading Model/Bot
 tags: trading system, trading, market, financial, hft
+lang: en_US
+image: https://s3-us-west-2.amazonaws.com/oscarchavez/posts/building-a-trading-system/images/large/Screen_Shot_2017-07-20_at_12.22.16_PM.png
 ---
 
 So, for the next and most ambitious project we've ever had at [VR3](http://vr3.io), I self-assigned to me the tremendous task of building a **Trading System** that includes some sort of **Trading Model** or **Trading Bot**, that can, but is not limited to do HFT(High Frecuency Trading). 

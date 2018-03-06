@@ -6,6 +6,8 @@ author: oschvr
 mail: os@oschvr.com
 excerpt: Un chatbot es un servicio impulsado por reglas y aveces inteligencia artifical con el que se interactúa a través de una interfaz de tipo chat.
 tags: chatbot, ai, ml, automated, chat bot, bot
+lang: en_MX
+image: https://s3-us-west-2.amazonaws.com/oscarchavez/posts/que-es-un-chatbot/images/large/1-RD1s9xBIvd_ycJUnX12Tyw_2x.png
 ---
 
 ### ¿Qué es un chatbot?

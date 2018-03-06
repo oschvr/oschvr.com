@@ -12,7 +12,7 @@ body {
   padding: 0;
   background: $body-background;
   color: $body-foreground;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.5;
   font-family: 'Courier New', Courier, monospace;
 }
@@ -103,6 +103,10 @@ header h2 {
 
 /* Main Content
 */
+
+.post-img{
+  object-fit: contain;
+}
 
 #main_content {
   width: 100%;

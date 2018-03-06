@@ -5,7 +5,9 @@ title: Profundizando Tensorflow Pt1
 author: oschvr
 mail: os@oschvr.com
 excerpt: Tensorflow es una plataforma a código abierto de aprendizaje automático para todos
-tags: tensoflow, ai, ml, machine learning, google ai
+tags: tensoflow, ai, ml, machine learning, google, ai
+lang: es_MX
+image: https://s3-us-west-2.amazonaws.com/oscarchavez/posts/profundizando-tensorflow-pt1/images/large/tools_tf_2x.jpg
 ---
 
 ### Profundizando en [Tensorflow](https://www.tensorflow.org). Pt. 1
