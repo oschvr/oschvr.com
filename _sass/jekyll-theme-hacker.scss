@@ -1,7 +1,7 @@
 @import "rouge-base16-dark";
 @import "default_colors";
 
-$body-background: $black !default;
+$body-background: $white !default;
 $body-foreground: $white !default;
 $header: $white !default;
 $blockquote-color: $silver-chalice !default;
@@ -10,8 +10,8 @@ $blockquote-border: $dove-grey !default;
 body {
   margin: 0;
   padding: 0;
-  background: $body-background;
-  color: $body-foreground;
+  //background: $body-background;
+  color: $black;
   font-size: 16px;
   line-height: 1.5;
   font-family: 'Courier New', Courier, monospace;
@@ -20,12 +20,12 @@ body {
 /* General & 'Reset' Stuff */
 
 .frame {
-  border-top: 10px solid $border-top;
-  border-bottom: 10px solid $border-bottom;
+  border-top: 20px solid $border-top;
+  border-bottom: 20px solid $border-bottom;
   background-image: 
       linear-gradient($border-top, $border-bottom),
       linear-gradient($border-top, $border-bottom);
-  background-size: 10px 100%;
+  background-size: 20px 100%;
   background-position:0 0, 100% 0;
   background-repeat:no-repeat;
 }
@@ -67,7 +67,7 @@ header h1 {
   margin: 0 0 0 0px;
   font-weight: bold;
   font-family: 'Courier New', Courier, monospace;
-  color: $alto;//$header;
+  color: $black;//$header;
   text-shadow: $intense-red;
   letter-spacing: -1px;
   -webkit-font-smoothing: antialiased;
@@ -97,7 +97,7 @@ header h2 {
 #social li {
   display: inline;
   a {
-    color: white;
+    color: black;
   }
 }
 
@@ -105,7 +105,7 @@ header h2 {
 */
 
 .post-img{
-  object-fit: contain;
+  max-height: 200px;
 }
 
 #main_content {
@@ -121,7 +121,7 @@ section img {
 }
 
 span {
-  color: $white;
+  color: $black;
   font-weight: bold;
 }
 
@@ -141,7 +141,7 @@ span {
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
   font-family: 'Courier New', Courier, monospace;
-  color: $white;
+  color: $black;
   letter-spacing: -0.03em;
   text-shadow: $white;
 }
@@ -231,11 +231,7 @@ td {
 }
 
 hr {
-  height: 0;
-  border: 0;
-  padding: 10px;
-  border-bottom: 1px dashed $white;
-  color: $dark-grey;
+  border: 0.5px dashed $dark-grey;
 }
 
 .hr-post {
