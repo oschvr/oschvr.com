@@ -20,6 +20,10 @@ body {
 
 /* General & 'Reset' Stuff */
 
+img {
+  border-radius: 5px;
+}
+
 .frame {
   border-top: 20px solid $border-top;
   border-bottom: 20px solid $border-bottom;
@@ -97,6 +101,7 @@ header h2 {
 
 #social li {
   display: inline;
+  padding: 20px;
   a {
     color: black;
   }
@@ -144,6 +149,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Raleway', Courier, monospace;
   color: $black;
   //letter-spacing: -0.03em;
+  margin-top: 10px;
   text-shadow: $white;
 }
 
@@ -197,23 +203,26 @@ blockquote {
 
 pre {
   background: rgba(0, 0, 0, 0.9);
-  border: 2px solid rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.3);
   padding: 10px;
   font-size: 16px;
-  border-radius: 10px;
+  border-radius: 5px;
+  color: $hacker-green;
   text-wrap: normal;
   overflow: auto;
   overflow-y: hidden;
 }
 
 code.highlighter-rouge {
-  background: rgba(0,0,0,0.9);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  padding: 0px 5px;
-  margin: 0px -3px;
-  font-style: italic;
-  color: $intense-yellow;
+  background: rgba(0,0,0,0.2);
+  padding: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  margin: 0px -1px;
+  color: $apple-blossom;
   border-radius: 3px;
+  text-wrap: normal;
+  overflow: auto;
+  overflow-y: hidden;
 }
 
 table {
