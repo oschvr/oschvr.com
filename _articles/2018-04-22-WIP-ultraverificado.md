@@ -1,13 +1,13 @@
 ---
 layout: post
-date: 2016-03-18 06:15:21
-title: Hola Mundo
+date: 2017-11-17 20:02:34.531992
+title: ¿Qué es un Chatbot?
 author: oschvr
 mail: os@oschvr.com
-excerpt: Construyendo una extensión de Chrome y Firefox para combatir las noticias falsas.
-tags: development, mexico, fake news, fakenews, verificado, chrome, firefox
-lang: es_MX
-image: https://s3-us-west-2.amazonaws.com/oscarchavez/posts/hola-mundo/images/large/mexico.jpg
+excerpt: Un chatbot es un servicio impulsado por reglas y aveces inteligencia artifical con el que se interactúa a través de una interfaz de tipo chat.
+tags: chatbot, ai, ml, automated, chat bot, bot
+lang: en_MX
+image: https://s3-us-west-2.amazonaws.com/oscarchavez/posts/que-es-un-chatbot/images/large/1-RD1s9xBIvd_ycJUnX12Tyw_2x.png
 ---
 
 # <= WORK IN PROGRESS =>

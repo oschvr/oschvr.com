@@ -39,6 +39,7 @@ I *used to* oversee the sponsorships, meetups and general management of the firs
 
 I'm using these other tools in favor of deprecation:
 
+- **React** DOM Management Frontend Library
 - **Angular 5** Udpated: HTML enhanced for webapps
 - **VS Code** Favorite code editor
 - **Postman** API Explorer
