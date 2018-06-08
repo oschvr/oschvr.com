@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2017-11-17 20:02:34.531992
+date: 2018-06-08 02:19:00
 title: 3 Meses sin Facebook
 author: oschvr
 mail: os@oschvr.com
@@ -9,10 +9,6 @@ tags: facebook, deletefacebook, privacy, data, tech giant
 lang: en_MX
 image: https://oschvr.com/static/oscarchavez/img/nofb/nofb.jpg
 ---
-
-# 3 Meses sin Facebook: Reflexión
-
-> Por [oschvr](https://twitter.com/oschvr)
 
 _Última Actualización: **09/Junio/2018**_
 
