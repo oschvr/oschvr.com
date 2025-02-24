@@ -64,6 +64,10 @@ pagination.pagerSize = 5
   # text = "Check it out on GitHub"
   # url = "https://github.com/mirus-ua/hugo-theme-re-terminal"
 
+[services]
+  [services.disqus]
+    shortname = 'oschvr-1'
+
 [permalinks]
   posts = "posts/:slug"
 
