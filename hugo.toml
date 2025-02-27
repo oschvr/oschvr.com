@@ -72,7 +72,7 @@ pagination.pagerSize = 5
   [permalinks.page]
   posts = "posts/:slug"
   fails = "/fails/:slug/"
-  instantinfra = "/instantinfra/:year/:month/:slug/"
+  instantinfra = "/instantinfra/:year/:month/:day/:slug/"
   [permalinks.section]
   posts = '/posts/'
   instantinfra = '/instantinfra/'
