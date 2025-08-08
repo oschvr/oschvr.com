@@ -1,8 +1,8 @@
 +++
-title = "Une autre démenagement"
+title = "Autre démenagement"
 date = "2024-10-15"
 description = "Reflections on moving to Belgium."
-slug = "une-autre-demenage"
+slug = "autre-demenagement"
 draft = false
 tags = ["migration", "personal"]
 categories = ["personal"]
