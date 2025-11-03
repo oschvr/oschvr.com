@@ -1,11 +1,13 @@
 baseURL: https://oschvr.com/
 languageCode: en-us
-title: oschvr.com
+title: oschvr
 theme: PaperMod
 pagination:
   pagerSize: 5
 permalinks:
   posts: posts/:slug
+  fails: fails/:slug
+  problems: problems/:slug
 ignoreLogs:
   - "warning-goldmark-raw-html"
 outputs:
@@ -13,12 +15,23 @@ outputs:
     - html
     - rss
     - json
+services:
+  disqus:
+    shortname: oschvr-1
 params:
+  homeInfoParams:
+    Title: Hey 👋 !
+    Content: Welcome to my digital garden. I'm Oscar, a software engineer working in the cloud infrastructure space. Here you'll find my thoughts about software, cloud, security, money, business, travelling and life.
+  socialIcons:
+    - name: linkedin
+      url: https://www.linkedin.com/in/oschvr/
+    - name: github
+      url: https://github.com/oschvr
   mainSections:
     - posts
   contentTypeName: posts
   themeColor: green
-  showMenuItems: 5
+  showMenuItems: 8
   showLanguageSelector: false
   fullWidthTheme: false
   centerTheme: true
@@ -31,8 +44,11 @@ params:
   owner: oschvr
   author: oschvr
   ShowReadingTime: true
-  ShowShareButtons: true
+  ShowShareButtons: false
   ShowCodeCopyButtons: true
+  ShowToc: false
+  ShowBreadCrumbs: true
+  ShowPostNavLinks: true
   comments: true
   keywords:
     - software
@@ -66,36 +82,34 @@ menu:
     - identifier: search
       name: search
       url: /search
-      weight: 0
+      weight: 1
+
     - identifier: posts
       name: posts
       url: /
-      weight: 1
+      weight: 2
+
     - identifier: about
       name: about
       url: /about
-      weight: 2
+      weight: 3
+
     - identifier: snippets
       name: snippets
       url: /snippets
-      weight: 3
+      weight: 5
+
     - identifier: uses
       name: uses
       url: /uses
-      weight: 5
+      weight: 6
+
     - identifier: problems
       name: problems
       url: /problems
-      weight: 6
-    - identifier: problems
+      weight: 7
+
+    - identifier: fails
       name: fails
       url: /fails
-      weight: 7
-    - identifier: github
-      name: github
-      url: https://github.com/oschvr
-      weight: 8
-    - identifier: linkedin
-      name: linkedin
-      url: https://www.linkedin.com/in/oschvr/
       weight: 8
