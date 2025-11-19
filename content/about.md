@@ -54,4 +54,4 @@ I've done a lot of on-site, remote and temporary contract jobs with clients from
 
 Meetups, events and conferences are something I'm always looking to assist or participate in. I'm always up to help the industry grow, give some career advice and meet amazing people 😎.
 
-![oschvr](https://oschvr.s3.dualstack.us-west-2.amazonaws.com/osnov2025.jpg)
+![oschvr](https://oschvr.s3.dualstack.us-west-2.amazonaws.com/osnov.jpg)
