@@ -1,18 +1,18 @@
 ---
 title: "InstantInfra: Setup an AWS account"
-date: 2025-11-17T12:59:54+01:00
+date: 2025-11-17
 draft: false
 cover:
   image: https://oschvr.s3.dualstack.us-west-2.amazonaws.com/002_instantinfra_setup_aws_account_171125.png
 ---
 
-> Setting up an AWS account with a minimal IAM setup that can be used with Terraform (IaC)
+> Setting up an AWS account with a minimal IAM setup that can be used with TF (IaC)
 
 Today, I will attempt to:
 
 - Open a new AWS cloud account
 - Set up their recommended IAM structure
-- Create the necessary IAM resources to be used by Terraform/OpenTofu
+- Create the necessary IAM resources to be used by TF
 - Test it out
 
 All of this within 10 minutes (excluding any verification or external waiting times)
@@ -26,8 +26,22 @@ All of this within 10 minutes (excluding any verification or external waiting ti
 - **An email** _(AWS recommends to use an email address that can be accessed by a group, in order to maintain accessibility)_
 - [AWS CLI v2](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) installed
 - One of the following:
-  - [Terraform (v1.10.0)](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli) installed
-  - [OpenTofu (v1.10.0)](https://opentofu.org/) installed
+  - [Terraform (>v1.10.0)](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli) installed
+  - [OpenTofu (>v1.10.0)](https://opentofu.org/) installed
+
+---
+
+I created an alias that I will be using throughout the series ([learn more about my opinion about terraform vs opentofu](/posts/instant-infra-opentofu-vs-terraform/))
+
+```shell
+# If you use Terraform
+alias tf="terraform"
+
+# If you use OpenTofu
+alias tf="tofu"
+```
+
+---
 
 So let's get started:
 
@@ -66,7 +80,7 @@ Let's do step 1 and 2 first.
 
 Once that's done, we can move onto creating the IAM resources needed to interact with AWS programmatically
 
-#### Creating the IAM account for Terraform/OpenTofu
+#### Creating the IAM account for TF
 
 So now we need to create a "user" for our IaC tools, that will have a "policy" (set of permissions to perform actions on resources).
 
@@ -132,13 +146,12 @@ For now we'll proceed to create a IAM User for the IaC tools:
 
 ### Testing out
 
-Finally, you've a set of AWS access keys that you can use to configure Terraform with and start provisioning Infrastructure as Code
+Finally, you've a set of AWS access keys that you can use to configure TF with and start provisioning Infrastructure as Code
 
-The best way is to use the official provider https://registry.terraform.io/providers/hashicorp/aws/latest
-
-Create a new file `main.tf`
+> All the code bellow, you'll find [here](https://github.com/oschvr/instantinfra)
 
 ```terraform
+# main.tf
 terraform {
   required_providers {
     aws = {
@@ -152,26 +165,28 @@ provider "aws" {
   # Configuration options
 }
 
-
+# data.tf
 data "aws_billing_service_account" "main" {}
 
-output {
+data "aws_account_primary_contact" "main" {}
+
+data "aws_caller_identity" "main" {}
+
+# outputs.tf
+output "billing_service_account" {
 	value = data.aws_billing_service_account.main
 }
 
+output "primary_contact" {
+    value = data.aws_account_primary_contact.main.full_name
+}
+
+output "account_id" {
+    value = data.aws_caller_identity.main.account_id
+}
 ```
 
-This is essentially a "ping" or a "hello world" to verify that Terraform can talk to AWS
-
-Before proceeding, I created an alias that I will be using throughout the series, [learn more about my opinion about terraform vs opentofu](/posts/instant-infra-opentofu-vs-terraform/)
-
-```shell
-# If you use Terraform
-alias tf="terraform"
-
-# If you use OpenTofu
-alias tf="tofu"
-```
+This is essentially a "ping" or a "hello world" to verify that TF can talk to AWS
 
 Then do the following
 
@@ -180,12 +195,18 @@ tf init
 tf apply
 ```
 
-You should be able to see Terraform communicating with AWS and creating a plan that you will be prompted to apply
+You should be able to see TF communicating with AWS and creating a plan that you will be prompted to apply
 
 Hit `yes` and then you should see an output like this
 
 ```terraform
-aws_billing_service_account = XXXXX
+billing_service_account = XXXXX
+primary_contact = XXXX (your name)
+account_id = XXXX
 ```
 
-Done, you're all setup.
+Great, don't forget to cleanup !
+
+```shell
+tf destroy
+```

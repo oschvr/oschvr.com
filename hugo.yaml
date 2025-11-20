@@ -89,10 +89,15 @@ menu:
       url: /
       weight: 2
 
+    - identifier: instant-infra
+      name: instant-infra
+      url: /instant-infra
+      weight: 3
+
     - identifier: about
       name: about
       url: /about
-      weight: 3
+      weight: 4
 
     - identifier: snippets
       name: snippets
