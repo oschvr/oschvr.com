@@ -45,9 +45,12 @@ alias tf="tofu"
 
 1. Go to https://cloud.google.com/
 2. Click on **Start free**
-3. Follow the instructions
+3. Connect using your Google Account
+4. Enter your address and payment method
 
-You should be logged in and ready to use the GCP console.
+You'll get US $300 in credits, valid for 90 days in your new account, however, you are likely to get charged a €25 (or your local currency equivalent) one time payment to make sure the card works and its valid, but as it says in the disclaimer, you can get this refunded
+
+Anyways, after this you should be logged in and ready to use the GCP console.
 
 > We will not go over the Organisation setup as that is more targeted to production-ready enterprise workloads.
 
