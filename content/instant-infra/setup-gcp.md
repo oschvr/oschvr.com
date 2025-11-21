@@ -11,8 +11,7 @@ cover:
 Today, I will attempt to:
 
 - Open a new GCP cloud account
-- Set up their recommended IAM structure
-- Create the necessary IAM resources to be used by Terraform/OpenTofu
+- Create the necessary IAM resources to be used by Terraform/OpenTofu (for this channel !)
 - Test it out
 
 > DISCLAIMER: This is ONE solution of many different approaches. As of today, what you will see here is commonly found in forums. Keep in mind it might evolve.
@@ -95,31 +94,34 @@ Let's test this with TF
 
 ```terraform
 
+
 # main.tf
 terraform {
   required_providers {
     google = {
-      source = "hashicorp/google"
+      source  = "hashicorp/google"
       version = "6.8.0"
     }
   }
 }
 
 provider "google" {
-  project = "<PROJECT_ID>"
+  project = var.project_id
   region  = "europe-west2"
   zone    = "europe-west2-a"
 }
 
 # data.tf
-data "google_billing_account" "main" {
-  display_name = "Main Billing Account"
-  open         = true
+data "google_project" "project" {
+  project_id = var.project_id
 }
 
-# outputs.tf
-output "billing_account_id" {
-  value = data.google_billing_account.main.id
+output "project_number" {
+  value = data.google_project.project.number
+}
+
+output "project_id" {
+  value = data.google_project.project.id
 }
 
 ```
@@ -138,11 +140,10 @@ You should be able to see TF communicating with GCP and creating a plan that you
 Hit `yes` and then you should see an output like this
 
 ```terraform
-billing_account_id = XXXXX
+project_number = XXXXX
+project_id = XXX/XXX
 ```
 
-Great, don't forget to cleanup !
+Since we didn't create any resource, we will not run `tf destroy`
 
-```shell
-tf destroy
-```
+See you on the next one !
