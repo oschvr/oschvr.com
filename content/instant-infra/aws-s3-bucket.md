@@ -24,7 +24,7 @@ I do have to mention that you can provision an AWS S3 Bucket using the fantastic
 To see what resources you have available, you can consult the providers documentation
 
 [Terraform](https://registry.terraform.io/providers/hashicorp/aws/latest/docs)
-[OpenTofu](https://search.opentofu.org/provider/opentofu/aws/latest
+[OpenTofu](https://search.opentofu.org/provider/opentofu/aws/latest)
 
 Here's the one I will do today
 
