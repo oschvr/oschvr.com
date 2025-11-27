@@ -228,7 +228,7 @@ data "aws_ami" "ubuntu" {
 
   filter {
     name   = "name"
-    values = ["ubuntu/images/hvm-ssd/ubuntu-focal-22.04-amd64-server-*"]
+    values = ["ubuntu/images/hvm-ssd/ubuntu-*-22.04-amd64-*-*"]
   }
 
   owners = ["099720109477"]  # Canonical owner ID for Ubuntu AMIs
