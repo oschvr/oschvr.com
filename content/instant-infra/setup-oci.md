@@ -6,7 +6,7 @@ cover:
   image: https://oschvr.s3.dualstack.us-west-2.amazonaws.com/010_instantinfra_setup_oci_account_031225.png
 ---
 
-> Setting up an AWS account with a minimal IAM setup that can be used with TF (IaC)
+> Setting up an OCI account with a minimal IAM setup that can be used with TF (IaC)
 
 Today, I will attempt to:
 
