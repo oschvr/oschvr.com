@@ -31,7 +31,7 @@ All of this within 10 minutes (excluding any verification or external waiting ti
 
 ---
 
-I created an alias that I will be using throughout the series ([learn more about my opinion about terraform vs opentofu](/posts/instant-infra-opentofu-vs-terraform/))
+I created an alias that I will be using throughout the series ([learn more about my opinion about terraform vs opentofu](/instant-infra/opentofu-vs-terraform/))
 
 ```shell
 # If you use Terraform
@@ -57,7 +57,7 @@ This is the manual part of the exercise. And by manual I mean, not programmatic 
 6. Choose a Basic/Developer Support Plan, you can change this later
 7. Wait for activation
 
-### Configuring the IAM
+### Configuring the initial IAM
 
 So, at this point you have a fresh AWS account usable with the root account (the email you just used to create the AWS account).
 

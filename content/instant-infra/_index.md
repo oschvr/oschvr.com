@@ -1,3 +1,3 @@
 ---
-title: Instant Infra
+title: InstantInfra
 ---

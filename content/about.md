@@ -16,11 +16,11 @@ I'm also a dad 👦🏼👼🏼 and I speak Spanish 🇲🇽, English 🇬🇧 a
 
 I always repeat these (not really mine but I've adopted them as my principles):
 
-•⁠ _**Finished, not perfect**_: It's best to have something that works to show where your effort and energy has gone into, than a never ending story of a prototype or an idea that "has" to be perfect. **Nothing is perfect** !
+•⁠ **Finished, not perfect**: It's best to have something that works to show where your effort and energy has gone into, than a never ending story of a prototype or an idea that "has" to be perfect. **Nothing is perfect** !
 
-•⁠ _⁠**One thing at a time**_: I'm of the idea that if you focus all your attention, energy and dedication into the task or the problem at hand, you'll be much more likely to succeed. Or as I saw somewhere else, "single-thread things"
+•⁠ ⁠**One thing at a time**: I'm of the idea that if you focus all your attention, energy and dedication into the task or the problem at hand, you'll be much more likely to succeed. Or as I saw somewhere else, "single-thread things"
 
-•⁠ ⁠**_To go fast, you must go slow_**: So in 2021 I had a [TIA (stroke)](/posts/stroke) and specifically the recovery process, made me live this piece of advice. Go see the post for more but in a nutshell, if you really want to go fast in any direction, you need to be somewhat careful and meticulous deciding what steps to take. Otherwise you risk a fall or a misstep that will, slow you more. This, I found, is particularly useful for when you step into the unknown/uncertain.
+•⁠ ⁠**To go fast, you must go slow**: So in 2021 I had a [TIA (stroke)](/posts/stroke) and specifically the recovery process, made me live this piece of advice. Go see the post for more but in a nutshell, if you really want to go fast in any direction, you need to be somewhat careful and meticulous deciding what steps to take. Otherwise you risk a fall or a misstep that will, slow you more. This, I found, is particularly useful for when you step into the unknown/uncertain.
 
 ## WORK
 

@@ -28,7 +28,7 @@ Today, I will attempt to:
 
 ---
 
-I created an alias that I will be using throughout the series ([learn more about my opinion about terraform vs opentofu](/posts/instant-infra-opentofu-vs-terraform/))
+I created an alias that I will be using throughout the series ([learn more about my opinion about terraform vs opentofu](/instant-infra/opentofu-vs-terraform/))
 
 ```shell
 # If you use Terraform
@@ -47,7 +47,7 @@ alias tf="tofu"
 3. Connect using your Google Account
 4. Enter your address and payment method
 
-You'll get US $300 in credits, valid for 90 days in your new account, however, you are likely to get charged a €25 (or your local currency equivalent) one time payment to make sure the card works and its valid, but as it says in the disclaimer, you can get this refunded
+You'll get US $300 in credits **valid for 90 days** in your new account, however, you are likely to get charged a €25 (or your local currency equivalent) one time payment to make sure the card works and its valid, but as it says in the disclaimer, you can get this refunded
 
 Anyways, after this you should be logged in and ready to use the GCP console.
 
@@ -57,13 +57,15 @@ Feel free to use the default project or create a new one If you choose to create
 
 In any case, save the project id, we'll use it later.
 
-### Configure the IAM
+### Configure the initial IAM
 
 We will proceed to create a (**Service Account**)[https://docs.cloud.google.com/iam/docs/service-account-overview] for TF
 
 We will use [`Basic > Owner`](https://docs.cloud.google.com/iam/docs/roles-overview#legacy-basic) (_which is generally not recommended_). Basic roles provide **broad** access to Google Cloud resources, and thus they can be quite insecure. Learn more about [GCP roles](https://docs.cloud.google.com/iam/docs/roles-overview)
 
 However, since I will be using this account with the broadest level of access to experiment... it doesn't really matter !
+
+### Create the IAM account for TF
 
 1. Login using the root/owner account
 2. Go to **IAM & Admin**
