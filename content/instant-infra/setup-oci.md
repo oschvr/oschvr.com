@@ -56,7 +56,7 @@ And I believe the concept of compartments is similar to projects in GCP. At firs
 
 But we are ignoring that and we'll use `root` for everything here. (unless we explicitly want to play around with IAM later)
 
-### Create the IAM account for TF
+### Create the IAM account for TF
 
 Having said that we'll use the `default` identity domain and that we want to use the `root` compartment (all), we first need to create
 
