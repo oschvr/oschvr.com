@@ -1,5 +1,5 @@
 ---
-date: '2022-01-30'
+date: "2022-01-30"
 path: /snippets
 title: Snippets
 ---
@@ -30,6 +30,7 @@ source ~/.bashrc
 ```
 
 ---
+
 ### Git: Delete all branches but master
 
 _*Added: 01-02-2022*_
@@ -40,7 +41,7 @@ Alias to delete all but master branches (I use zsh, change `~/.zshrc` to `~/.bas
 echo 'alias gdb="git branch | grep -v "master" | xargs git branch -D"' >> ~/.zshrc
 ```
 
-> I read it as *gbd* (git branches delete)
+> I read it as _gbd_ (git branches delete)
 
 ---
 
@@ -78,7 +79,7 @@ sudo du -hsx -- * | sort -rh | head -10
 
 ---
 
-### Clean systemd journal logs 
+### Clean systemd journal logs
 
 _*Added: 12-02-2022*_
 
@@ -103,7 +104,8 @@ echo -n | openssl s_client -connect $HOST:$PORTNUMBER -servername $SERVERNAME | 
 ```
 
 ---
-### Configure git cache 
+
+### Configure git cache
 
 _*Added: 17-02-2022*_
 
@@ -129,6 +131,7 @@ cat access.log | perl -p -e 's/^([0-9]*)/"[".localtime($1)."]"/e'
 ---
 
 ### Aliases to get kubernetes resources (nodes)
+
 _*Added: 15-08-2022*_
 
 To get CPU/Mem requests/limits from the Kubernetes nodes
@@ -140,6 +143,7 @@ alias k8snoderesources='kubectl get nodes --no-headers | awk '\''{print $1}'\'' 
 ---
 
 #### Alias to get kubernetes resources (cpu/mem)
+
 _*Added: 15-08-2022*_
 
 To get CPU/Mem requests/limits from the Kubernetes pods
@@ -151,6 +155,7 @@ alias k8spodresources='kubectl get po --all-namespaces -o=jsonpath="{range .item
 ---
 
 #### Interactive debug pod for Kubernetes
+
 _*Added: 19-08-2022*_
 
 Creates an ephemeral pod based on busybox (image can be anything) that will die on exit
@@ -175,6 +180,7 @@ _*Added: 24-08-2022*_
 Create a ssh tunnel through a jump box / bastion host
 
 On terminal 1
+
 ```
  ssh -i <BASTION_KEY> -N -L <PORT_TO_BIND_LOCALLY>:<HOST_ACCESSIBLE_FROM_BASTION>:<PORT_TO_LISTEN_FROM_BASTION> <USER>@<BASTION_HOST_IP_OR_DNS>
 ```
@@ -182,6 +188,7 @@ On terminal 1
 Keep this one open. This will tunnel the service at the specified port through SSH
 
 On terminal 2 (check connection)
+
 ```
 nc -vz localhost <PORT_TO_BIND_LOCALLY>
 ```
@@ -240,14 +247,14 @@ Use a different tag on the same AWS ECR Docker image using AWS cli
 MANIFEST=$(aws ecr batch-get-image --repository-name <REPO_NAME> --image-ids imageTag=<OLD_TAG> --query 'images[].imageManifest' --output text)
 
 # Put new manifest (new tag)
-aws ecr put-image --repository-name <REPO_NAME> --image-tag <NEW_TAG> --image-manifest "$MANIFEST" 
+aws ecr put-image --repository-name <REPO_NAME> --image-tag <NEW_TAG> --image-manifest "$MANIFEST"
 ```
 
 ---
 
 ### Common PSQL commands
-_*Added: 26-10-2022*_
 
+_*Added: 26-10-2022*_
 
 1. Grant CONNECT to the database:
 
@@ -260,7 +267,6 @@ _*Added: 26-10-2022*_
 3. Grant on all tables for DML statements: SELECT, INSERT, UPDATE, DELETE:
 
 `GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA schema_name TO username;`
-
 
 4. Grant all privileges on all tables in the schema:
 
@@ -347,22 +353,21 @@ alias j11="export JAVA_HOME=`/usr/libexec/java_home -v 11`"
 alias j8="export JAVA_HOME=`/usr/libexec/java_home -v 1.8`"
 ```
 
-Reload 
+Reload
+
 ```
 source ~/.zshrc
 ```
 
-Switch easily typing `j8` or `j11` 
-
+Switch easily typing `j8` or `j11`
 
 ---
 
-### Get size of top docker storage layers 
+### Get size of top docker storage layers
 
 _*Added: 04-01-2023*_
 
 Get in a k8s worker node.
-
 
 ```
 # Find top storage layers
@@ -373,7 +378,6 @@ docker inspect $(docker ps -q) | jq '.[]|.Config.Hostname,.Config.Labels."io.kub
 ```
 
 Credit to [rharshad.com](https://rharshad.com/eks-troubleshooting-disk-pressure/)
-
 
 ---
 
@@ -398,7 +402,7 @@ awk 'NF {sub(/\r/, ""); printf "%s\\n",$0;}' ca.pem
 
 ---
 
-### Add linux user and add it sudo 
+### Add linux user and add it sudo
 
 _*Added: 27-07-2023*_
 
@@ -423,9 +427,9 @@ sudo su - <username>
 mkdir ~/.ssh
 
 # Create ed25519 ssh key
-ssh-keygen -t ed25519 -C <username> -f ~/.ssh/<username> 
+ssh-keygen -t ed25519 -C <username> -f ~/.ssh/<username>
 
-## Make sure to save the private key ~/.ssh/<username> 
+## Make sure to save the private key ~/.ssh/<username>
 
 # Make sure you can see public key
 cat ~/.ssh/<username>.pub
@@ -482,7 +486,6 @@ PORT=8080; lsof -i TCP:${PORT} | grep LISTEN | awk '{print $2}' | xargs kill -9
 https://stackoverflow.com/a/53661717
 _*Added: 20-02-2024*_
 
-
 ```
 (
     NAMESPACE=<NAMESPACE>
@@ -518,4 +521,12 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 
 # Test
 sudo docker run hello-world
+```
+
+### Get docker containers <> open ports
+
+_*Added: 29-12-2025*_
+
+```
+sudo docker ps --format '{{.Names}}\t{{.Ports}}'
 ```
