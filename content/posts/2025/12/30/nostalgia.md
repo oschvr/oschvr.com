@@ -20,8 +20,10 @@ But of course, I know the reason: my kids.
 
 This emotional rollercoaster arrived shortly after my first child came into my life almost three years ago, and now, after my daughter arrived six months ago, it has intensified.
 
-**Every time I get to do something with my young kids, either individually or together, it's a precious moment in time, surrounded by pure, unconditional love, where we're bound together for the rest of this tiny timeline I call life. And every time that moment ends, it makes me sad to think that eventually they'll grow up and I'll never have this again.**
+**Every time I get to do something with my young kids, either individually or together, it's a precious moment surrounded by pure love where we build a connection that will forever bind us in this brief period called life. And every time that moment ends, it makes me sad to think that eventually they'll grow up and I'll never have this again.**
 
 I recall the myriad of practical advice around logistics and economics that people offered before I became a parent, but I don't think I was actively listening for any emotional advice (sorry, Dad) to prepare for such a complex and deep range of emotions.
 
 I wanted to put into words what I'm currently going through, just how immensely happy I am, but to the point that it makes me afraid.
+
+![kidatbeach](https://oschvr.s3.dualstack.us-west-2.amazonaws.com/kidatbeach.jpg)
