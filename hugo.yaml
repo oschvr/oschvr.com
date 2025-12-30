@@ -5,7 +5,7 @@ theme: PaperMod
 pagination:
   pagerSize: 5
 permalinks:
-  posts: posts/:slug
+  posts: "/:year/:month/:day/:slug/"
   fails: fails/:slug
   problems: problems/:slug
 ignoreLogs:
