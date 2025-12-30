@@ -20,7 +20,7 @@ services:
     shortname: oschvr-1
 params:
   homeInfoParams:
-    Content: Welcome to my digital garden. I'm Oscar, a Senior DevOps Engineer. Here you'll find my thoughs,  posts from https://instant-infra.com
+    Content: Welcome to my digital garden. I'm Oscar, a Senior DevOps Engineer. Here you'll find my thoughs,  posts from https://instant-infra.com and my personal posts.
   socialIcons:
     - name: linkedin
       url: https://www.linkedin.com/in/oschvr/
