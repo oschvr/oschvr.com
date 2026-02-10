@@ -2,6 +2,7 @@
 date: '2022-01-30'
 path: /snippets
 title: Snippets
+layout: snippets
 ---
 
 ### Cleanup Released Persistent Volumes in Kubernetes

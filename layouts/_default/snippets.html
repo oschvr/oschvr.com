@@ -1,0 +1,23 @@
+{{ define "main" }}
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title">{{ .Title }}</h1>
+  </header>
+
+  <div class="search-container" style="margin: 2rem 0;">
+    <input
+      type="text"
+      id="snippets-search"
+      placeholder="Search snippets..."
+      style="width: 100%; padding: 0.75rem; font-size: 1rem; border: 1px solid var(--border); border-radius: 4px; background: var(--entry); color: var(--content);"
+    />
+    <div id="search-count" style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--secondary);"></div>
+  </div>
+
+  <div class="post-content" id="snippets-content">
+    {{ .Content }}
+  </div>
+</article>
+
+<script src="/js/snippets-filter.js"></script>
+{{ end }}
