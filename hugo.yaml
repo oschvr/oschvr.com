@@ -6,7 +6,7 @@ pagination:
   pagerSize: 5
 permalinks:
   posts: "/:year/:month/:day/:slug/"
-  fails: fails/:slug
+  fails: "/:year/:month/:day/:slug/"
   problems: problems/:slug
 ignoreLogs:
   - "warning-goldmark-raw-html"
