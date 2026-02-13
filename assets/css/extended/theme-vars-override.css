@@ -10,6 +10,10 @@
   --border: rgba(69, 104, 130, 0.3);
 }
 
+.first-entry.home-info {
+  min-height: auto;
+}
+
 :root[data-theme="dark"] {
   --theme: #1b3c53;
   --entry: #234c6a;

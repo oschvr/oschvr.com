@@ -1,7 +1,10 @@
 ---
 title: '{{ replace .File.ContentBaseName "-" " " | title }}'
 date: "{{ .Date }}"
-tags: []
+tags:
+  -
+categories:
+  -
 author: oschvr
 showToc: true
 comments: true

@@ -1,0 +1,22 @@
+{{- with site.Params.homeInfoParams }}
+<article class="first-entry home-info">
+  <header class="entry-header">
+    <h1>{{ .Title | markdownify }}</h1>
+  </header>
+  <div class="entry-content">
+    <p>
+      I enjoy building reliable systems, automating everything, and diving deep
+      into cloud infrastructure and security.
+    </p>
+    <p>
+      But this space is more than tech. Here you'll also find personal
+      reflections, travel stories, thoughts on money, business, and life in
+      general. Expect to get to know me beyond the terminal.
+    </p>
+  </div>
+  <footer class="entry-footer">
+    {{ partial "social_icons.html" (dict "align"
+    site.Params.homeInfoParams.AlignSocialIconsTo) }}
+  </footer>
+</article>
+{{- end -}}
