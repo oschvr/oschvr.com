@@ -9,7 +9,6 @@ draft: false
 slug: stroke
 tags:
   - health
-  - personal
 title: Stroke
 ---
 

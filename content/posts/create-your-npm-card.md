@@ -1,14 +1,13 @@
 ---
 categories:
-- technology
+- tutorials
 date: '2020-07-05'
 description: A guide to creating your own npm card.
 draft: false
 slug: create-your-npm-card
 tags:
+- javascript
 - npm
-- card
-- development
 title: How to create your npm card
 ---
 

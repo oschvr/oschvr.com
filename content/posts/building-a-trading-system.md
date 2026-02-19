@@ -1,13 +1,12 @@
 ---
 categories:
-- technology
+- programming
 date: '2017-07-10'
 description: My experience building a trading system.
 draft: false
 slug: building-a-trading-system
 tags:
 - trading
-- system
 - finance
 title: Building a Trading System
 ---

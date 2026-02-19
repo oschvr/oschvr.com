@@ -1,6 +1,6 @@
 ---
 categories:
-  - technology
+  - programming
 cover:
   image: https://oschvr.s3.dualstack.us-west-2.amazonaws.com/whatip.jpg
 date: "2022-05-10"
@@ -9,8 +9,9 @@ draft: false
 path: /whatip
 slug: whatip
 tags:
-  - Go
-  - programming
+  - go
+  - nginx
+  - networking
 title: whatip.info
 ---
 

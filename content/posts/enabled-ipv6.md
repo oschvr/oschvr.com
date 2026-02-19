@@ -1,6 +1,6 @@
 ---
 categories:
-  - technology
+  - cloud
 cover:
   image: https://oschvr.s3.dualstack.us-west-2.amazonaws.com/ipv6-dig.png
 date: "2023-01-19"
@@ -9,8 +9,9 @@ draft: false
 slug: ipv6-support
 tags:
   - ipv6
+  - cloudfront
+  - route53
   - networking
-  - cloud
 title: IPv6 support
 ---
 

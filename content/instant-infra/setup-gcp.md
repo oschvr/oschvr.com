@@ -2,6 +2,13 @@
 title: "InstantInfra: Setup a GCP Account"
 date: 2025-11-20
 draft: false
+categories:
+  - cloud
+tags:
+  - instant-infra
+  - gcp
+  - terraform
+  - infrastructure-as-code
 cover:
   image: https://oschvr.s3.dualstack.us-west-2.amazonaws.com/004_instantinfra_setup_gcp_account_201125.png
 ---

@@ -1,6 +1,6 @@
 ---
 categories:
-  - technology
+  - devops-and-sre
 cover:
   image: https://oschvr.s3.dualstack.us-west-2.amazonaws.com/gitonfire.jpg
 date: "2023-05-11"
@@ -8,9 +8,8 @@ description: Reflections on Github outages and reliability.
 draft: false
 slug: is-github-alive
 tags:
-  - github
-  - outage
-  - SRE
+  - reliability
+  - sre
 title: Is Github Alive
 ---
 

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>oschvr - post editor</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; height: 100vh; display: flex; flex-direction: column; background: #f5f5f5; color: #333; }
+
+  /* Top bar */
+  #topbar { background: #fff; border-bottom: 1px solid #ddd; padding: 12px 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 16px; }
+  #topbar label { font-size: 14px; font-weight: 600; color: #555; display: flex; flex-direction: column; gap: 4px; }
+  #topbar input, #topbar textarea { font-size: 15px; padding: 8px 10px; border: 1px solid #ccc; border-radius: 4px; font-family: inherit; }
+  #topbar textarea { resize: vertical; min-height: 36px; height: 36px; }
+  .row { display: flex; gap: 16px; grid-column: 1 / -1; }
+  .row label { flex: 1; }
+  .row-actions { display: flex; align-items: end; gap: 8px; grid-column: 1 / -1; }
+  .draft-toggle { display: flex; align-items: center; gap: 6px; flex-direction: row !important; padding-top: 18px; }
+  .draft-toggle input { width: auto; }
+  button { padding: 8px 16px; border: none; border-radius: 4px; font-size: 15px; font-weight: 600; cursor: pointer; }
+  #saveBtn { background: #2563eb; color: #fff; }
+  #saveBtn:hover { background: #1d4ed8; }
+  .cover-row { grid-column: 1 / -1; }
+  .cover-row label { width: 100%; }
+  .cover-drop { display: flex; align-items: center; gap: 8px; }
+  .cover-drop input { flex: 1; }
+  .cover-dropzone { position: relative; min-width: 140px; padding: 8px 14px; border: 2px dashed #ccc; border-radius: 4px; font-size: 14px; color: #888; text-align: center; cursor: default; transition: border-color 0.15s, background 0.15s; }
+  .cover-dropzone.drag-over { border-color: #2563eb; background: rgba(37,99,235,0.08); color: #2563eb; }
+  .cover-dropzone.uploading { border-color: #f59e0b; color: #f59e0b; }
+  .cover-dropzone.done { border-color: #10b981; color: #10b981; }
+  .cover-thumb { height: 28px; border-radius: 3px; vertical-align: middle; margin-right: 4px; }
+
+  /* Typeahead multi-select */
+  .ta-wrap { position: relative; }
+  .ta-selected { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; padding: 6px 8px; border: 1px solid #ccc; border-radius: 4px; background: #fff; min-height: 36px; cursor: text; }
+  .ta-selected:focus-within { border-color: #2563eb; box-shadow: 0 0 0 2px rgba(37,99,235,0.15); }
+  .ta-chip { display: inline-flex; align-items: center; gap: 3px; background: #2563eb; color: #fff; padding: 3px 8px; border-radius: 12px; font-size: 13px; font-weight: 500; white-space: nowrap; }
+  .ta-chip .ta-x { cursor: pointer; font-size: 15px; line-height: 1; margin-left: 2px; }
+  .ta-input { border: none; outline: none; font-size: 15px; padding: 2px 4px; min-width: 80px; flex: 1; font-family: inherit; background: transparent; }
+  .ta-dropdown { display: none; position: absolute; top: 100%; left: 0; right: 0; max-height: 200px; overflow-y: auto; background: #fff; border: 1px solid #ccc; border-radius: 4px; margin-top: 2px; z-index: 100; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+  .ta-dropdown.open { display: block; }
+  .ta-option { padding: 7px 12px; font-size: 14px; cursor: pointer; }
+  .ta-option:hover, .ta-option.active { background: #f0f4ff; }
+  .ta-option.create { color: #2563eb; font-style: italic; }
+
+  /* Editor panes */
+  #panes { flex: 1; display: flex; min-height: 0; }
+  #editor-wrap { flex: 1; display: flex; flex-direction: column; border-right: 1px solid #ddd; position: relative; }
+  #editor { flex: 1; width: 100%; padding: 16px; font-family: 'SF Mono', 'Fira Code', monospace; font-size: 14px; line-height: 1.6; border: none; resize: none; outline: none; background: #fff; }
+  #preview { flex: 1; padding: 16px 24px; overflow-y: auto; background: #fff; }
+  #preview img { max-width: 100%; }
+  #preview pre { background: #f6f8fa; padding: 12px; border-radius: 6px; overflow-x: auto; }
+  #preview code { font-family: 'SF Mono', 'Fira Code', monospace; font-size: 13px; }
+  #preview h1,#preview h2,#preview h3 { margin: 16px 0 8px; }
+  #preview p { margin: 8px 0; line-height: 1.7; }
+  #preview blockquote { border-left: 3px solid #ddd; padding-left: 12px; color: #666; }
+
+  /* Drag overlay */
+  .drag-over::after { content: 'Drop image to upload'; position: absolute; inset: 0; background: rgba(37,99,235,0.12); border: 2px dashed #2563eb; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 600; color: #2563eb; pointer-events: none; border-radius: 4px; z-index: 10; }
+
+  /* Upload status */
+  #upload-status { font-size: 12px; padding: 4px 12px; color: #666; background: #fafafa; border-top: 1px solid #eee; display: none; }
+  #upload-status.active { display: block; }
+  #upload-status.error { color: #dc2626; }
+
+  /* Uploaded images list */
+  #uploaded-images { font-size: 12px; padding: 4px 12px; background: #fafafa; border-top: 1px solid #eee; display: flex; flex-wrap: wrap; gap: 4px; }
+  .img-chip { display: inline-flex; align-items: center; gap: 4px; background: #e5e7eb; padding: 2px 8px; border-radius: 12px; }
+  .img-chip button { background: none; padding: 0 2px; font-size: 11px; color: #2563eb; text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<div id="topbar">
+  <div class="row">
+    <label>Title <input type="text" id="title" placeholder="My Awesome Post" oninput="updateSlug()"></label>
+    <label>Date <input type="text" id="date"></label>
+  </div>
+  <div class="row">
+    <label>Tags
+      <div class="ta-wrap" id="tags-wrap">
+        <div class="ta-selected" id="tags-selected"><input class="ta-input" id="tags-input" placeholder="Type to search or create..."></div>
+        <div class="ta-dropdown" id="tags-dropdown"></div>
+      </div>
+    </label>
+    <label>Categories
+      <div class="ta-wrap" id="categories-wrap">
+        <div class="ta-selected" id="categories-selected"><input class="ta-input" id="categories-input" placeholder="Type to search or create..."></div>
+        <div class="ta-dropdown" id="categories-dropdown"></div>
+      </div>
+    </label>
+  </div>
+  <div class="cover-row">
+    <label>Cover Image
+      <div class="cover-drop">
+        <input type="text" id="cover" placeholder="https://oschvr.s3.us-west-2.amazonaws.com/...">
+        <div id="cover-dropzone" class="cover-dropzone">Drop image here</div>
+      </div>
+    </label>
+  </div>
+  <div class="row">
+    <label>Description <textarea id="description" placeholder="Short description of the post"></textarea></label>
+  </div>
+  <div class="row-actions">
+    <label class="draft-toggle"><input type="checkbox" id="draft"> Draft</label>
+    <label style="font-size:12px;color:#888">Slug: <code id="slug"></code></label>
+    <div style="flex:1"></div>
+    <button id="saveBtn" onclick="savePost()">Save Post (.md)</button>
+  </div>
+</div>
+
+<div id="panes">
+  <div id="editor-wrap">
+    <textarea id="editor" placeholder="Write your markdown here...&#10;&#10;Drag & drop images to upload to S3."></textarea>
+    <div id="uploaded-images"></div>
+    <div id="upload-status"></div>
+  </div>
+  <div id="preview"></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.1/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>
+marked.setOptions({
+  highlight: (code, lang) => {
+    if (lang && hljs.getLanguage(lang)) return hljs.highlight(code, { language: lang }).value;
+    return hljs.highlightAuto(code).value;
+  }
+});
+
+const editor = document.getElementById('editor');
+const preview = document.getElementById('preview');
+const titleEl = document.getElementById('title');
+const dateEl = document.getElementById('date');
+const slugEl = document.getElementById('slug');
+
+// Typeahead multi-select
+const selectedTags = new Set();
+const selectedCategories = new Set();
+let allTags = [];
+let allCategories = [];
+
+function initTypeahead(key, allItems, selectedSet) {
+  const input = document.getElementById(key + '-input');
+  const dropdown = document.getElementById(key + '-dropdown');
+  const container = document.getElementById(key + '-selected');
+  let activeIdx = -1;
+
+  function renderChips() {
+    container.querySelectorAll('.ta-chip').forEach(c => c.remove());
+    const chips = [...selectedSet].map(val => {
+      const chip = document.createElement('span');
+      chip.className = 'ta-chip';
+      chip.innerHTML = `${val}<span class="ta-x">&times;</span>`;
+      chip.querySelector('.ta-x').addEventListener('click', e => {
+        e.stopPropagation();
+        selectedSet.delete(val);
+        renderChips();
+        filterDropdown();
+      });
+      return chip;
+    });
+    chips.reverse().forEach(c => container.insertBefore(c, container.firstChild));
+  }
+
+  function filterDropdown() {
+    const q = input.value.toLowerCase().trim();
+    const filtered = allItems.filter(t => !selectedSet.has(t) && t.toLowerCase().includes(q));
+    dropdown.innerHTML = '';
+    activeIdx = -1;
+
+    filtered.forEach(item => {
+      const div = document.createElement('div');
+      div.className = 'ta-option';
+      div.textContent = item;
+      div.addEventListener('mousedown', e => { e.preventDefault(); pick(item); });
+      dropdown.appendChild(div);
+    });
+
+    // Show "create" option if query doesn't match any existing item exactly
+    if (q && !allItems.some(t => t.toLowerCase() === q) && !selectedSet.has(q)) {
+      const div = document.createElement('div');
+      div.className = 'ta-option create';
+      div.textContent = `Create "${q}"`;
+      div.addEventListener('mousedown', e => { e.preventDefault(); pick(q); if (!allItems.includes(q)) allItems.push(q); });
+      dropdown.appendChild(div);
+    }
+
+    dropdown.classList.toggle('open', dropdown.children.length > 0);
+  }
+
+  function pick(val) {
+    selectedSet.add(val);
+    input.value = '';
+    renderChips();
+    filterDropdown();
+    input.focus();
+  }
+
+  function updateActive() {
+    const opts = dropdown.querySelectorAll('.ta-option');
+    opts.forEach((o, i) => o.classList.toggle('active', i === activeIdx));
+    if (activeIdx >= 0 && opts[activeIdx]) opts[activeIdx].scrollIntoView({ block: 'nearest' });
+  }
+
+  input.addEventListener('input', filterDropdown);
+  input.addEventListener('focus', filterDropdown);
+  input.addEventListener('blur', () => { dropdown.classList.remove('open'); });
+
+  input.addEventListener('keydown', e => {
+    const opts = dropdown.querySelectorAll('.ta-option');
+    if (e.key === 'ArrowDown') { e.preventDefault(); activeIdx = Math.min(activeIdx + 1, opts.length - 1); updateActive(); }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); activeIdx = Math.max(activeIdx - 1, 0); updateActive(); }
+    else if (e.key === 'Enter') {
+      e.preventDefault();
+      if (activeIdx >= 0 && opts[activeIdx]) { opts[activeIdx].dispatchEvent(new Event('mousedown')); }
+      else if (input.value.trim()) {
+        const q = input.value.trim().toLowerCase();
+        if (!allItems.includes(q)) allItems.push(q);
+        pick(q);
+      }
+    }
+    else if (e.key === 'Backspace' && !input.value && selectedSet.size) {
+      const last = [...selectedSet].pop();
+      selectedSet.delete(last);
+      renderChips();
+      filterDropdown();
+    }
+  });
+
+  container.addEventListener('click', () => input.focus());
+  renderChips();
+}
+
+// Load taxonomy
+fetch('/taxonomy.json').then(r => r.json()).then(data => {
+  allTags = data.tags;
+  allCategories = data.categories;
+  initTypeahead('tags', allTags, selectedTags);
+  initTypeahead('categories', allCategories, selectedCategories);
+});
+
+// Close dropdowns on outside click
+document.addEventListener('click', e => {
+  if (!e.target.closest('.ta-wrap')) {
+    document.querySelectorAll('.ta-dropdown').forEach(d => d.classList.remove('open'));
+  }
+});
+
+// Pre-fill date
+function isoLocal() {
+  const d = new Date();
+  const off = -d.getTimezoneOffset();
+  const sign = off >= 0 ? '+' : '-';
+  const pad = n => String(Math.abs(n)).padStart(2, '0');
+  return d.getFullYear() + '-' + pad(d.getMonth()+1) + '-' + pad(d.getDate()) + 'T'
+    + pad(d.getHours()) + ':' + pad(d.getMinutes()) + ':' + pad(d.getSeconds())
+    + sign + pad(Math.floor(Math.abs(off)/60)) + ':' + pad(Math.abs(off)%60);
+}
+dateEl.value = isoLocal();
+
+// Slug
+function updateSlug() {
+  const s = titleEl.value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  slugEl.textContent = s || 'untitled';
+}
+updateSlug();
+
+// Live preview
+editor.addEventListener('input', renderPreview);
+function renderPreview() {
+  preview.innerHTML = marked.parse(editor.value || '');
+}
+
+// Drag and drop
+const editorWrap = document.getElementById('editor-wrap');
+const statusEl = document.getElementById('upload-status');
+const imagesEl = document.getElementById('uploaded-images');
+let dragCounter = 0;
+
+editorWrap.addEventListener('dragenter', e => { e.preventDefault(); dragCounter++; editorWrap.classList.add('drag-over'); });
+editorWrap.addEventListener('dragleave', e => { e.preventDefault(); dragCounter--; if (dragCounter === 0) editorWrap.classList.remove('drag-over'); });
+editorWrap.addEventListener('dragover', e => e.preventDefault());
+editorWrap.addEventListener('drop', e => {
+  e.preventDefault();
+  dragCounter = 0;
+  editorWrap.classList.remove('drag-over');
+  const files = [...e.dataTransfer.files].filter(f => f.type.startsWith('image/'));
+  files.forEach(uploadFile);
+});
+
+// Cover image drag and drop
+const coverDropzone = document.getElementById('cover-dropzone');
+const coverInput = document.getElementById('cover');
+let coverDragCounter = 0;
+
+coverDropzone.addEventListener('dragenter', e => { e.preventDefault(); coverDragCounter++; coverDropzone.classList.add('drag-over'); });
+coverDropzone.addEventListener('dragleave', e => { e.preventDefault(); coverDragCounter--; if (coverDragCounter === 0) coverDropzone.classList.remove('drag-over'); });
+coverDropzone.addEventListener('dragover', e => e.preventDefault());
+coverDropzone.addEventListener('drop', async e => {
+  e.preventDefault();
+  coverDragCounter = 0;
+  coverDropzone.classList.remove('drag-over');
+  const files = [...e.dataTransfer.files].filter(f => f.type.startsWith('image/'));
+  if (!files.length) return;
+  coverDropzone.classList.add('uploading');
+  coverDropzone.textContent = 'Uploading...';
+  try {
+    const url = await uploadFileRaw(files[0]);
+    coverInput.value = url;
+    coverDropzone.classList.remove('uploading');
+    coverDropzone.classList.add('done');
+    coverDropzone.innerHTML = `<img class="cover-thumb" src="${url}"> Done`;
+  } catch (err) {
+    coverDropzone.classList.remove('uploading');
+    coverDropzone.textContent = 'Error! Try again';
+    setTimeout(() => { coverDropzone.textContent = 'Drop image here'; }, 2000);
+  }
+});
+
+// Shared upload function — returns the S3 URL
+async function uploadFileRaw(file) {
+  const form = new FormData();
+  form.append('file', file);
+  const res = await fetch('/upload', { method: 'POST', body: form });
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.error || 'Upload failed');
+  return data.url;
+}
+
+async function uploadFile(file) {
+  statusEl.textContent = `Uploading ${file.name}...`;
+  statusEl.className = 'active';
+  try {
+    const url = await uploadFileRaw(file);
+    // Insert at cursor
+    const md = `![${file.name}](${url})`;
+    const pos = editor.selectionStart;
+    const before = editor.value.slice(0, pos);
+    const after = editor.value.slice(pos);
+    const nl = before.length && !before.endsWith('\n') ? '\n' : '';
+    editor.value = before + nl + md + '\n' + after;
+    editor.selectionStart = editor.selectionEnd = pos + nl.length + md.length + 1;
+    renderPreview();
+    statusEl.textContent = `Uploaded ${file.name}`;
+    addImageChip(file.name, url);
+  } catch (err) {
+    statusEl.textContent = `Error: ${err.message}`;
+    statusEl.className = 'active error';
+  }
+}
+
+function addImageChip(name, url) {
+  const chip = document.createElement('span');
+  chip.className = 'img-chip';
+  chip.innerHTML = `${name} <button onclick="setCover('${url}')">Set as cover</button>`;
+  imagesEl.appendChild(chip);
+}
+
+function setCover(url) {
+  document.getElementById('cover').value = url;
+}
+
+// Save / export
+function savePost() {
+  const title = titleEl.value || 'Untitled';
+  const date = dateEl.value;
+  const draft = document.getElementById('draft').checked;
+  const cover = document.getElementById('cover').value;
+  const desc = document.getElementById('description').value;
+  const tags = [...selectedTags];
+  const cats = [...selectedCategories];
+  const body = editor.value;
+
+  let fm = '---\n';
+  fm += `title: "${title}"\n`;
+  fm += `date: ${date}\n`;
+  fm += `draft: ${draft}\n`;
+  if (cover) {
+    fm += `cover:\n  image: ${cover}\n`;
+  }
+  if (tags.length) {
+    fm += 'tags:\n' + tags.map(t => `  - ${t}`).join('\n') + '\n';
+  }
+  if (cats.length) {
+    fm += 'categories:\n' + cats.map(c => `  - ${c}`).join('\n') + '\n';
+  }
+  if (desc) {
+    fm += `description: "${desc}"\n`;
+  }
+  fm += '---\n\n';
+
+  const content = fm + body;
+  const slug = slugEl.textContent || 'untitled';
+  const blob = new Blob([content], { type: 'text/markdown' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `${slug}.md`;
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+</script>
+</body>
+</html>

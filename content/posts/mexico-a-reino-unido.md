@@ -9,7 +9,8 @@ draft: false
 slug: mexico-a-reino-unido
 tags:
   - migration
-  - personal
+  - travel
+  - spanish
 title: De Mexico al Reino Unido
 ---
 

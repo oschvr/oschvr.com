@@ -9,7 +9,7 @@ tags:
 - raspberry-pi
 - networking
 - pihole
-- ads
+- ad-blocking
 title: Blocking Ads with PiHole
 ---
 

@@ -9,7 +9,7 @@ draft: false
 slug: nuevas-direcciones
 tags:
   - travel
-  - europe
+  - spanish
 title: Nuevas Direcciones
 ---
 

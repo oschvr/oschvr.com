@@ -1,11 +1,14 @@
 ---
+categories:
+  - cloud
 date: "2025-02-27T17:13:37+01:00"
 draft: true
 title: Hello Instant Infra
 slug: "hello-instant-infra"
 tags:
-  - instant infra
-  - SRE
+  - instant-infra
+  - sre
+  - infrastructure-as-code
 cover:
   image: "https://oschvr.s3.dualstack.us-west-2.amazonaws.com/cloud.jpg"
 description: "Introducing Instant Infra: A fun-focused content channel exploring cloud infrastructure through hands-on experiments, IaC challenges, and other deployments across multiple cloud providers."

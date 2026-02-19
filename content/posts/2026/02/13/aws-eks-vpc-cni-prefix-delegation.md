@@ -2,6 +2,14 @@
 title: "AWS EKS VPC CNI Prefix Delegation"
 date: 2026-02-13T09:49:22+01:00
 draft: false
+categories:
+  - cloud
+tags:
+  - aws
+  - eks
+  - kubernetes
+  - vpc
+  - networking
 cover:
     image: https://oschvr.s3.us-west-2.amazonaws.com/snowing.jpg
 ---

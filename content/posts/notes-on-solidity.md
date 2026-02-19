@@ -1,6 +1,6 @@
 ---
 categories:
-  - technology
+  - blockchain-and-crypto
 cover:
   image: https://oschvr.s3.dualstack.us-west-2.amazonaws.com/8893450eef344e8ea2ed3e0d413ee7f8.jpg
 date: "2017-08-15"
@@ -9,7 +9,7 @@ draft: false
 slug: notes-on-solidity
 tags:
   - solidity
-  - blockchain
+  - smart-contracts
   - ethereum
 title: Notes on Solidity
 ---

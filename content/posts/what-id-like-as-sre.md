@@ -1,6 +1,6 @@
 ---
 categories:
-  - technology
+  - devops-and-sre
 cover:
   image: https://oschvr.s3.dualstack.us-west-2.amazonaws.com/oldstreet.jpeg
 date: "2022-12-15"
@@ -8,8 +8,9 @@ description: Questions I want answered by developers.
 draft: false
 slug: what-id-like-as-sre
 tags:
-  - SRE
-  - DevOps
+  - sre
+  - devops
+  - observability
 title: Things I want as SRE/DevOps from Devs
 ---
 

@@ -9,8 +9,6 @@ draft: false
 slug: bash-prank
 tags:
   - bash
-  - scripting
-  - fun
 title: Bash Prank
 ---
 

@@ -2,6 +2,14 @@
 title: "InstantInfra: AWS MSK Message Queue"
 date: 2025-11-26
 draft: false
+categories:
+  - cloud
+tags:
+  - instant-infra
+  - aws
+  - kafka
+  - terraform
+  - infrastructure-as-code
 cover:
   image: "https://oschvr.s3.us-west-2.amazonaws.com/008_instantinfra_aws_message_queue_msk_261125.png"
 ---

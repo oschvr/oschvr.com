@@ -1,13 +1,13 @@
 ---
 categories:
-- lifestyle
+- personal
 date: '2018-06-08'
 description: Mi experiencia después de tres meses sin usar Facebook
 draft: false
 slug: 3-meses-sin-facebook
 tags:
 - social-media
-- personal
+- spanish
 title: 3 Meses sin Facebook
 ---
 

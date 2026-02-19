@@ -1,6 +1,6 @@
 ---
 categories:
-  - technology
+  - tutorials
 cover:
   image: https://oschvr.s3.dualstack.us-west-2.amazonaws.com/b3b964aa766c45ffad3eb29a6cded081.png
 date: "2017-08-29"
@@ -9,8 +9,9 @@ draft: false
 slug: como-hacer-un-proxy-de-tor
 tags:
   - tor
-  - proxy
+  - raspberry-pi
   - networking
+  - spanish
 title: Cómo hacer un Proxy de Tor
 ---
 

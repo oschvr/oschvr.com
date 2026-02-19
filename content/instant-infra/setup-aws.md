@@ -2,6 +2,13 @@
 title: "InstantInfra: Setup an AWS account"
 date: 2025-11-17
 draft: false
+categories:
+  - cloud
+tags:
+  - instant-infra
+  - aws
+  - terraform
+  - infrastructure-as-code
 cover:
   image: https://oschvr.s3.dualstack.us-west-2.amazonaws.com/002_instantinfra_setup_aws_account_171125.png
 ---

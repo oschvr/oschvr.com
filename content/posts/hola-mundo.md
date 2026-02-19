@@ -7,7 +7,7 @@ draft: false
 slug: hola-mundo
 tags:
 - introduction
-- blog
+- spanish
 title: Hola Mundo 👏
 ---
 

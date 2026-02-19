@@ -1,6 +1,6 @@
 ---
 categories:
-  - technology
+  - ai-and-ml
 cover:
   image: https://oschvr.s3.dualstack.us-west-2.amazonaws.com/d07ef127d77349b9802527960739ab5b.png
 date: "2017-11-17"
@@ -8,8 +8,8 @@ description: Exploring the concept of chatbots.
 draft: false
 slug: que-es-un-chatbot
 tags:
-  - chatbot
-  - AI
+  - ai
+  - spanish
 title: ¿Qué es un chatbot?
 ---
 

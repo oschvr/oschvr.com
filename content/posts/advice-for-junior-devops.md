@@ -9,8 +9,7 @@ draft: false
 slug: advice-for-junior-devops
 tags:
   - devops
-  - career
-  - advice
+  - career-advice
 title: Advice for Junior DevOps
 ---
 

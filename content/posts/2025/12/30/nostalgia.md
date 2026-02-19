@@ -5,7 +5,7 @@ draft: false
 cover:
   image: https://oschvr.s3.dualstack.us-west-2.amazonaws.com/nostalgia.jpg
 tags:
-  - personal
+  - parenting
 categories:
   - personal
 ---

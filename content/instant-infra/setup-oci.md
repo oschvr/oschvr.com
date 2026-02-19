@@ -2,6 +2,13 @@
 title: "InstantInfra: Setup a OCI Account"
 date: 2025-12-03
 draft: false
+categories:
+  - cloud
+tags:
+  - instant-infra
+  - oci
+  - terraform
+  - infrastructure-as-code
 cover:
   image: https://oschvr.s3.dualstack.us-west-2.amazonaws.com/010_instantinfra_setup_oci_account_031225.png
 ---

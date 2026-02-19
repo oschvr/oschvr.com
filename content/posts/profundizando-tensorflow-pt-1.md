@@ -1,13 +1,14 @@
 ---
 categories:
-- technology
+- ai-and-ml
 date: '2017-07-24'
 description: Deep dive into Tensorflow.
 draft: false
 slug: profundizando-tensorflow-pt-1
 tags:
 - tensorflow
-- machine learning
+- machine-learning
+- spanish
 title: Profundizando Tensorflow Pt 1
 ---
 

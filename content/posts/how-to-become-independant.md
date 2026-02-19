@@ -1,13 +1,13 @@
 ---
 categories:
-- personal
+- career
 date: '2017-08-15'
 description: Reflections on becoming independent.
 draft: false
 slug: how-to-become-independant
 tags:
 - independence
-- personal growth
+- entrepreneurship
 title: How to become independant
 ---
 

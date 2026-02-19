@@ -1,6 +1,6 @@
 ---
 categories:
-  - finance
+  - blockchain-and-crypto
 cover:
   image: https://oschvr.s3.dualstack.us-west-2.amazonaws.com/eb0030fc316545d286dc699d2ecc4cdc.png
 date: "2017-08-24"
@@ -8,8 +8,8 @@ description: Exploring the concept of ICOs.
 draft: false
 slug: what-is-an-ico
 tags:
-  - ICO
   - cryptocurrency
+  - finance
 title: What is an ICO
 ---
 

@@ -2,6 +2,14 @@
 title: "InstantInfra: AWS S3 Storage Bucket"
 date: 2025-11-18
 draft: false
+categories:
+  - cloud
+tags:
+  - instant-infra
+  - aws
+  - s3
+  - terraform
+  - infrastructure-as-code
 cover:
   image: https://oschvr.s3.dualstack.us-west-2.amazonaws.com/003_instantinfra_aws_storage_bucket_181125.png
 ---

@@ -1,6 +1,6 @@
 ---
 categories:
-  - learning
+  - personal
 cover:
   image: https://oschvr.s3.dualstack.us-west-2.amazonaws.com/1000.jpg
 date: "2024-01-10"
@@ -9,9 +9,7 @@ draft: false
 slug: /1000-days-of-duolingo
 tags:
   - language-learning
-  - duolingo
   - french
-  - personal
 title: 1000 days of Duolingo
 ---
 

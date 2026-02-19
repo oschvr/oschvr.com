@@ -9,7 +9,7 @@ draft: false
 slug: un-autre-demenage
 tags:
   - migration
-  - personal
+  - french
 title: Un autre démenagement
 ---
 
