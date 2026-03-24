@@ -4,6 +4,17 @@ path: /snippets
 title: Snippets
 ---
 
+### Terminate all connections in a database in Postgres
+
+_*Added: 24-03-2026*_
+
+```
+SELECT pg_terminate_backend(pg_stat_activity.pid)
+FROM pg_stat_activity 
+WHERE pg_stat_activity.datname = '<DB_NAME>' 
+AND pid <> pg_backend_pid();
+```
+
 ### Cleanup Released Persistent Volumes in Kubernetes
 
 _*Added: 04-02-2026*_
