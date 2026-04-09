@@ -4,7 +4,20 @@ path: /snippets
 title: Snippets
 ---
 
-### Terminate all connections in a database in Postgres
+
+### Compute a sha1sum of a folder (full tree)
+
+_*Added: 09-04-2026*_
+
+Found in https://stackoverflow.com/a/545413
+
+```
+find path/to/folder -type f -print0 | sort -z | xargs -0 sha1sum | sha1sum
+
+```
+
+
+### Terminate all connections in a database in Postgres
 
 _*Added: 24-03-2026*_
 
