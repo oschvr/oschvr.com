@@ -4,6 +4,18 @@ path: /snippets
 title: Snippets
 ---
 
+### Get *JUST* the status code from a curl request
+
+_*Addded: 20-05-2026*_
+
+```
+URL="https://oschvr.com"
+STATUS_CODE=$(curl -s -o /dev/null -w "%{http_code}" "${URL}")
+
+echo "${STATUS_CODE}
+# 200
+```
+
 
 ### Compute a sha1sum of a folder (full tree)
 
