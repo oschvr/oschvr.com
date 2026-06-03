@@ -4,6 +4,15 @@ path: /snippets
 title: Snippets
 ---
 
+### Create a valid Fernet key for symmetric encryption in python
+
+_*Added: 03-06-2026*_
+
+```bash
+python -c "from cryptography.fernet import Fernet; print(Fernet.generate_key().decode())"
+```
+
+
 ### Get *JUST* the status code from a curl request
 
 _*Addded: 20-05-2026*_
