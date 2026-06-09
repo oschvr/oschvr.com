@@ -4,6 +4,15 @@ path: /snippets
 title: Snippets
 ---
 
+### Remove ALL the exif information from an image
+
+_*Added: 09-06-2026*_
+
+
+```bash
+exiftool -all= image.jpg
+```
+
 ### Create a valid Fernet key for symmetric encryption in python
 
 _*Added: 03-06-2026*_
