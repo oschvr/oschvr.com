@@ -1,13 +1,36 @@
 ---
-date: '2022-01-30'
+date: "2022-01-30"
 path: /snippets
 title: Snippets
 ---
 
+### Merge kubernetes config files
+
+_*Added: 24-06-2026*_
+
+```bash
+# Set KUBECONFIG to include all source files
+export KUBECONFIG=~/.kube/config:~/.kube/config-gke:~/.kube/config-eks
+
+# View merged configuration
+kubectl config view --flatten --raw
+
+# Save merged config to new file
+kubectl config view --flatten --raw > ~/.kube/config-merged
+
+# Replace original config with merged version
+mv ~/.kube/config ~/.kube/config.backup
+mv ~/.kube/config-merged ~/.kube/config
+
+# Verify merge
+kubectl config get-contexts
+```
+
+Found in https://oneuptime.com/blog/post/2026-02-09-merge-multiple-kubeconfig-files/view
+
 ### Remove ALL the exif information from an image
 
 _*Added: 09-06-2026*_
-
 
 ```bash
 exiftool -all= image.jpg
@@ -21,8 +44,7 @@ _*Added: 03-06-2026*_
 python -c "from cryptography.fernet import Fernet; print(Fernet.generate_key().decode())"
 ```
 
-
-### Get *JUST* the status code from a curl request
+### Get _JUST_ the status code from a curl request
 
 _*Addded: 20-05-2026*_
 
@@ -33,7 +55,6 @@ STATUS_CODE=$(curl -s -o /dev/null -w "%{http_code}" "${URL}")
 echo "${STATUS_CODE}
 # 200
 ```
-
 
 ### Compute a sha1sum of a folder (full tree)
 
@@ -46,15 +67,14 @@ find path/to/folder -type f -print0 | sort -z | xargs -0 sha1sum | sha1sum
 
 ```
 
-
 ### Terminate all connections in a database in Postgres
 
 _*Added: 24-03-2026*_
 
 ```
 SELECT pg_terminate_backend(pg_stat_activity.pid)
-FROM pg_stat_activity 
-WHERE pg_stat_activity.datname = '<DB_NAME>' 
+FROM pg_stat_activity
+WHERE pg_stat_activity.datname = '<DB_NAME>'
 AND pid <> pg_backend_pid();
 ```
 
@@ -62,21 +82,18 @@ AND pid <> pg_backend_pid();
 
 _*Added: 04-02-2026*_
 
-
 ```
 kubectl get pv -A | grep Released | cut -d' ' -f1 | xargs kubectl delete pv -
 ```
-
 
 ### Check if a TCP service is up if you don't have netcat or ping
 
 _*Added: 04-02-2026*_
 
 ```
-export HOST="oschvr.com" 
+export HOST="oschvr.com"
 timeout 1 bash -c '< /dev/tcp/'"$HOST"'/443 &&  echo Port is open || echo Port is closed'  || echo 'Connection timeout'
 ```
-
 
 ### Install Docker on Ubuntu 22.04
 
@@ -112,7 +129,6 @@ sudo docker run hello-world
 
 https://stackoverflow.com/a/53661717
 _*Added: 20-02-2024*_
-
 
 ```
 (
@@ -239,7 +255,6 @@ _*Added: 04-01-2023*_
 
 Get in a k8s worker node.
 
-
 ```
 # Find top storage layers
 TOP_STORAGE=$(du -hs /var/lib/docker/overlay2/* | grep -Ee '^[0-9]{3}[M]+|[0-9]G' | sort -h |tail -n 10 |tee -a /dev/stderr |awk '{print $2}'|xargs|sed 's/ /|/g')
@@ -249,7 +264,6 @@ docker inspect $(docker ps -q) | jq '.[]|.Config.Hostname,.Config.Labels."io.kub
 ```
 
 Credit to [rharshad.com](https://rharshad.com/eks-troubleshooting-disk-pressure/)
-
 
 ---
 
@@ -280,12 +294,12 @@ alias j8="export JAVA_HOME=`/usr/libexec/java_home -v 1.8`"
 ```
 
 Reload
+
 ```
 source ~/.zshrc
 ```
 
 Switch easily typing `j8` or `j11`
-
 
 ---
 
@@ -316,8 +330,8 @@ for svc in $(k get deploy --no-headers | awk '{print $1}'); do kubectl rollout r
 ---
 
 ### Common PSQL commands
-_*Added: 26-10-2022*_
 
+_*Added: 26-10-2022*_
 
 1. Grant CONNECT to the database:
 
@@ -330,7 +344,6 @@ _*Added: 26-10-2022*_
 3. Grant on all tables for DML statements: SELECT, INSERT, UPDATE, DELETE:
 
 `GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA schema_name TO username;`
-
 
 4. Grant all privileges on all tables in the schema:
 
@@ -431,6 +444,7 @@ _*Added: 24-08-2022*_
 Create a ssh tunnel through a jump box / bastion host
 
 On terminal 1
+
 ```
  ssh -i <BASTION_KEY> -N -L <PORT_TO_BIND_LOCALLY>:<HOST_ACCESSIBLE_FROM_BASTION>:<PORT_TO_LISTEN_FROM_BASTION> <USER>@<BASTION_HOST_IP_OR_DNS>
 ```
@@ -438,6 +452,7 @@ On terminal 1
 Keep this one open. This will tunnel the service at the specified port through SSH
 
 On terminal 2 (check connection)
+
 ```
 nc -vz localhost <PORT_TO_BIND_LOCALLY>
 ```
@@ -445,6 +460,7 @@ nc -vz localhost <PORT_TO_BIND_LOCALLY>
 ---
 
 #### Interactive debug pod for Kubernetes
+
 _*Added: 19-08-2022*_
 
 Creates an ephemeral pod based on busybox (image can be anything) that will die on exit
@@ -463,6 +479,7 @@ kubectl run -i --tty --rm dnsdebug --image=registry.k8s.io/e2e-test-images/jessi
 ---
 
 #### Alias to get kubernetes resources (cpu/mem)
+
 _*Added: 15-08-2022*_
 
 To get CPU/Mem requests/limits from the Kubernetes pods
@@ -474,6 +491,7 @@ alias k8spodresources='kubectl get po --all-namespaces -o=jsonpath="{range .item
 ---
 
 ### Aliases to get kubernetes resources (nodes)
+
 _*Added: 15-08-2022*_
 
 To get CPU/Mem requests/limits from the Kubernetes nodes
@@ -508,6 +526,7 @@ git config --global credential.helper cache
 ```
 
 ---
+
 ### Download SSL cert from website with openssl
 
 _*Added: 14-02-2022*_
@@ -580,9 +599,10 @@ Alias to delete all but master branches (I use zsh, change `~/.zshrc` to `~/.bas
 echo 'alias gdb="git branch | grep -v "master" | xargs git branch -D"' >> ~/.zshrc
 ```
 
-> I read it as *gbd* (git branches delete)
+> I read it as _gbd_ (git branches delete)
 
 ---
+
 ### Kubernetes aliases
 
 _*Added: 30-01-2022*_
