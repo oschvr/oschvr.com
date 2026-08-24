@@ -4,6 +4,46 @@ path: /snippets
 title: Snippets
 ---
 
+
+### Verify OpenSSL TLS cert <> key
+
+_*Added: 24-08-2026*_
+
+Verify key is valid
+
+```bash
+openssl rsa -in key.pem -check -noout
+# RSA key ok
+```
+
+Match cert and key
+
+```bash
+openssl x509 -noout -modulus -in cert.pem | openssl md5
+openssl rsa -in key.pem -modulus -noout | openssl md5
+# match outputs
+```
+
+Or using bash ternanry
+
+```bash
+[[ "$(openssl rsa -in key.pem -modulus -noout | openssl md5)" == "$(openssl x509 -noout -modulus -in cert.pem | openssl md5)" ]] && echo "Match" || echo "No match"
+```
+
+Check dates
+
+```bash
+openssl x509 -noout -dates -in cert.pem
+```
+
+Assuming you have the full chain (root -> intermediate -> leaf), you can do the following to check the order of the certs
+
+```bash
+openssl crl2pkcs7 -nocrl -certfile fullchain.pem | openssl pkcs7 -print_certs -noout
+```
+
+More here https://docs.acquia.com/acquia-cloud-platform/help/93661-verifying-validity-ssl-certificate
+
 ### Merge kubernetes config files
 
 _*Added: 24-06-2026*_

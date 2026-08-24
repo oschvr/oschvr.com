@@ -9,7 +9,7 @@ Hey 👋, I'm _Oscar_.
 
 ## ME
 
-Another citizen of this wonderful planet 🌍, that was born in Mexico 🇲🇽 {{< myAge >}} years ago (of course I like tacos 🌮).
+Another citizen of this wonderful planet 🌍, that was born in Mexico 🇲🇽 {{< myAge >}} years ago.
 
 I'm based between Brussels, BEL 🇧🇪 and London, UK 🇬🇧.
 I'm also a dad 👦🏼👼🏼 and I speak Spanish 🇲🇽, English 🇬🇧 and French 🇫🇷 (in that order).
