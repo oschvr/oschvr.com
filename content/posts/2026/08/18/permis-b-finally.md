@@ -67,6 +67,7 @@ In the poster is not super clear but the process is divided in 5 stages
 - This means that you can get **AT MOST** once `faute grave`
 - After 2 exam failures, you need to go to an official `auto-école` and do a 12-hour theoretical course, which costs between €100 and €160 if in French/Dutch. In English you can expect to pay up to €200 
 - After passing, you can request your provisional driving license.
+- Each attempt costs **19€**
 
 So this was probably the most difficult part of the whole process. See I started studing the `code de la route` with two fantastic mobile apps, [passetonpermis.be](https://passetonpermis.be) and [feuvert.be](https://www.feuvert.be/), I had to pay around 12€/M for like 6 months of passetonpermis.be and 25€/M for feuvert.be
 
@@ -76,10 +77,9 @@ So this was probably the most difficult part of the whole process. See I started
 
 For some reason, I didn't thought of studying in another language than English, and never tought any of it, unfortunately, when I arrived to the exam center, they asked in french which language did I wanted to do the test in, FR or NL. When I asked EN, they said that I had to wait for the translation module to be fixed, book again, this time notifying in advance and pay an extra 65€.
 
-So I said FR, being the beginner french speaker and feeling quite confident about my knowledge, I went in with a positive mindset. Failed it 
-
 **NEW TOTAL: 97€ + 19€ = 116€**
 
+So I said FR, being the beginner french speaker and feeling quite confident about my knowledge, I went in with a positive mindset. Failed it.
 I quickly changed to FR and started all lessons again. Went in for the attempt **2** the 14/10/2025. Failed again.
 
 **NEW TOTAL: 116€ + 19€ = 135€**
@@ -103,7 +103,8 @@ And finally passed attempt **4** on the 11/05/2026. I remember being incredibly 
 
 ### Formation à la conduite
 
-Immediately after passing, I went to the `commune` to request my provisional driving license. At this point you have to decide which `parcours` or `route` you want.
+**MISTAKE 1:** After I got the paper saying I passed the theorical exam, I didn't go straight to the `commune` to get the license until the 14/12/2025.
+It is only after you get your provisional driving license (pink card) that your `Formation à la conduite` period starts. At this point you have to decide which `parcours` or `route` you want.
 
 1. 9 months - No driving courses - With guide
 2. 6 months - 14h driving courses - With guide
@@ -112,11 +113,7 @@ Immediately after passing, I went to the `commune` to request my provisional dri
 
 > **NOTE**: If you chose any of the first two, you need to register your guides in the [BelDrive](https://beldrive.mobilit.fgov.be/) platform.
 
-**MISTAKE 1:** Without really understanding the implications of these, and hearing that driving courses were incredibly expensive, I chose 1. Had I know how the driving lessons worked I would have definitely chosen 4
-
-**MISTAKE 2:** After I got the paper saying I passed the theorical exam, I didn't go straight to the `commune` to get the license until the 14/12/2025.
-
-The problem is that it is only after you get your provisional driving license (pink card) that your `Formation à la conduite` period starts.
+**MISTAKE 2:** Without really understanding the implications of these, and hearing that driving courses were incredibly expensive, I chose 1. Had I know how the driving lessons worked I would have definitely chosen 4
 
 So for me
 
@@ -292,8 +289,8 @@ For you, really, best of luck and contact me if you think I can help [hey@oschvr
 
 ## Steps I Had to Take
 
-1. **Download study apps** — [passetonpermis.be](https://passetonpermis.be) and/or [feuvert.be](https://www.feuvert.be/). Study in the language you'll take the exam in (FR or NL, not EN).
-2. **Book Examen Théorique** — 50 questions, need 41/50. Costs ~€19. Book at [La Sécurité Automobile](https://www.securiteautomobile.be) or [Autocontrole](https://www.autocontrole.be).
+1. **Download study apps** - [passetonpermis.be](https://passetonpermis.be) and/or [feuvert.be](https://www.feuvert.be/). Study in the language you'll take the exam in (FR or NL, not EN).
+2. **Book Examen Théorique** - 50 questions, need 41/50. Costs ~€19. Book at [La Sécurité Automobile](https://www.securiteautomobile.be) or [Autocontrole](https://www.autocontrole.be).
 3. **If you fail twice → do the 12h theoretical course** at an `auto-école` (~€120–€200). Mandatory before attempt 3+.
 4. **Pass the Examen Théorique.**
 5. **Go immediately to the `commune`** to request your provisional driving license (pink card). Choose your `parcours`:
@@ -302,11 +299,11 @@ For you, really, best of luck and contact me if you think I can help [hey@oschvr
    - 3 months, 20h lessons, no guide
    - No stage, 30h lessons, no guide
    > The sooner you get the pink card, the sooner your waiting period starts. Don't wait.
-6. **If you chose route with a guide** — register them on [BelDrive](https://beldrive.mobilit.fgov.be/).
-7. **~~Formation Premier Secours~~** — _Removed since 15/08/2026. No longer required._
+6. **If you chose route with a guide** - register them on [BelDrive](https://beldrive.mobilit.fgov.be/).
+7. **~~Formation Premier Secours~~** - _Removed since 15/08/2026. No longer required._
 8. **Do your driving lessons** (if your chosen `parcours` requires them). Budget ~€1200 for 14h, ~€2280 for 30h.
-9. **Book and pass Examen Perception des risques** — computer-based, 5 questions with 10 risks, need 6/10. Costs ~€17.
-10. **Book Examen Pratique** — contact your `auto-école` for availability (don't trust the center's counter, they'll say _N_ months). Budget ~€160 for their slot + €46 exam fee.
-11. **Pass Examen Pratique** — 40 min total, ~32 min driving. Be theatrical: exaggerate head checks, stop fully at STOP signs, stay under the speed limit.
+9. **Book and pass Examen Perception des risques** - computer-based, 5 questions with 10 risks, need 6/10. Costs ~€17.
+10. **Book Examen Pratique** - contact your `auto-école` for availability (don't trust the center's counter, they'll say _N_ months). Budget ~€160 for their slot + €46 exam fee.
+11. **Pass Examen Pratique** - 40 min total, ~32 min driving. Be theatrical: exaggerate head checks, stop fully at STOP signs, stay under the speed limit.
 12. **Take the result paper to your `commune` immediately.** They keep your provisional license. Get an email confirmation.
 13. **Return to the `commune` after ~1 week** to pick up your `Permis B`.
