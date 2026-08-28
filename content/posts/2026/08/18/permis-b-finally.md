@@ -279,11 +279,34 @@ After a week and a couple days (in which you still don't have driving permission
 
 ---
 
-**VISITS TO THE CENTER: 9 times**
-**TOTAL: 1922€**
-**TIME TO COMPLETE: 12months**
+- **VISITS TO THE CENTER: 9 times**
+- **TOTAL: 1922€**
+- **TIME TO COMPLETE: 12months**
 
 ---
 
 If you read this, it means that you're looking at starting this process, or maybe already on it. 
 For you, really, best of luck and contact me if you think I can help [hey@oschvr.com](mailto:hey@oschvr.com)
+
+---
+
+## Steps I Had to Take
+
+1. **Download study apps** — [passetonpermis.be](https://passetonpermis.be) and/or [feuvert.be](https://www.feuvert.be/). Study in the language you'll take the exam in (FR or NL, not EN).
+2. **Book Examen Théorique** — 50 questions, need 41/50. Costs ~€19. Book at [La Sécurité Automobile](https://www.securiteautomobile.be) or [Autocontrole](https://www.autocontrole.be).
+3. **If you fail twice → do the 12h theoretical course** at an `auto-école` (~€120–€200). Mandatory before attempt 3+.
+4. **Pass the Examen Théorique.**
+5. **Go immediately to the `commune`** to request your provisional driving license (pink card). Choose your `parcours`:
+   - 9 months, no lessons, with guide
+   - 6 months, 14h lessons, with guide
+   - 3 months, 20h lessons, no guide
+   - No stage, 30h lessons, no guide
+   > The sooner you get the pink card, the sooner your waiting period starts. Don't wait.
+6. **If you chose route with a guide** — register them on [BelDrive](https://beldrive.mobilit.fgov.be/).
+7. **~~Formation Premier Secours~~** — _Removed since 15/08/2026. No longer required._
+8. **Do your driving lessons** (if your chosen `parcours` requires them). Budget ~€1200 for 14h, ~€2280 for 30h.
+9. **Book and pass Examen Perception des risques** — computer-based, 5 questions with 10 risks, need 6/10. Costs ~€17.
+10. **Book Examen Pratique** — contact your `auto-école` for availability (don't trust the center's counter, they'll say _N_ months). Budget ~€160 for their slot + €46 exam fee.
+11. **Pass Examen Pratique** — 40 min total, ~32 min driving. Be theatrical: exaggerate head checks, stop fully at STOP signs, stay under the speed limit.
+12. **Take the result paper to your `commune` immediately.** They keep your provisional license. Get an email confirmation.
+13. **Return to the `commune` after ~1 week** to pick up your `Permis B`.
