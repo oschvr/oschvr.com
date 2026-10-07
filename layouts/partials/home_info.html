@@ -1,6 +1,7 @@
 {{- with site.Params.homeInfoParams }}
+<canvas id="home-ascii-bg" aria-hidden="true"></canvas>
 <article class="first-entry home-info">
-  <div class="entry-content">
+  <div class="entry-content home-info-content">
     <h1 class="home-title">{{ .title | default "Hey!" }}</h1>
     {{- with .subtitle }}
     <p class="home-subtitle">{{ . }}</p>
@@ -24,8 +25,80 @@
     <p class="home-also"><strong>Also</strong>: {{ . | markdownify }}</p>
     {{- end }}
   </div>
-  <footer class="entry-footer">
+  <footer class="entry-footer home-info-content">
     {{ partial "social_icons.html" (dict "align" site.Params.homeInfoParams.AlignSocialIconsTo) }}
   </footer>
 </article>
+
+<script>
+(function () {
+  var canvas = document.getElementById('home-ascii-bg');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var chars = ['.', '·', '~', '-', '+', '°', '*', 'o', 's', 'c', 'a', 'r'];
+  var NUM = 700;
+  var particles = [];
+  var t = 0;
+
+  function mkParticle(startX) {
+    var h = canvas.height || 500;
+    return {
+      x: startX !== undefined ? startX : Math.random() * canvas.width,
+      y: Math.random() * h * 0.9,
+      vx: Math.random() * 0.6 + 0.2,
+      vy: -(Math.random() * 0.25 + 0.05),
+      waveAmp: Math.random() * 14 + 6,
+      waveFreq: 0.006 + Math.random() * 0.007,
+      phase: Math.random() * Math.PI * 2,
+      char: chars[Math.floor(Math.random() * chars.length)],
+      size: Math.floor(Math.random() * 15) + 8,
+      alpha: Math.random() * 0.45 + 0.55,
+    };
+  }
+
+  function resize() {
+    var article = document.querySelector('.home-info');
+    canvas.width = window.innerWidth;
+    canvas.height = article ? article.offsetHeight : window.innerHeight;
+    particles = Array.from({ length: NUM }, function () { return mkParticle(); });
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = '#7eb8d4';
+    t += 0.01;
+
+    for (var i = 0; i < particles.length; i++) {
+      var p = particles[i];
+      var y = p.y + Math.sin(p.x * p.waveFreq + t + p.phase) * p.waveAmp;
+
+      var yRatio = y / canvas.height;
+      var alpha = yRatio < 0.65
+        ? p.alpha
+        : yRatio > 0.90
+          ? 0
+          : p.alpha * (1 - (yRatio - 0.65) / 0.25);
+
+      if (alpha > 0.01) {
+        ctx.globalAlpha = alpha;
+        ctx.font = p.size + 'px monospace';
+        ctx.fillText(p.char, p.x, y);
+      }
+
+      p.x += p.vx;
+      p.y += p.vy;
+
+      if (p.x > canvas.width + 20 || p.y < -30) {
+        particles[i] = mkParticle(-20);
+      }
+    }
+
+    requestAnimationFrame(draw);
+  }
+
+  resize();
+  draw();
+  window.addEventListener('resize', resize);
+})();
+</script>
 {{- end -}}

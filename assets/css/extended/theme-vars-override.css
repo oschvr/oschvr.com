@@ -10,8 +10,29 @@
   --border: rgba(69, 104, 130, 0.3);
 }
 
+.list main.main {
+  position: relative;
+}
+
 .first-entry.home-info {
   min-height: auto;
+  background: transparent !important;
+}
+
+#home-ascii-bg {
+  position: absolute;
+  top: -1.5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  pointer-events: none;
+  opacity: 0.12;
+  z-index: 0;
+}
+
+.home-info-content {
+  position: relative;
+  z-index: 1;
 }
 
 :root[data-theme="dark"] {

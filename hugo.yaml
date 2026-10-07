@@ -125,17 +125,17 @@ menu:
       url: /snippets
       weight: 5
 
-    - identifier: uses
-      name: uses
-      url: /uses
-      weight: 6
+    # - identifier: uses
+    #   name: uses
+    #   url: /uses
+    #   weight: 6
 
-    - identifier: problems
-      name: problems
-      url: /problems
-      weight: 7
-
-    - identifier: fails
-      name: fails
-      url: /fails
-      weight: 8
+    # - identifier: problems
+    #   name: problems
+    #   url: /problems
+    #   weight: 7
+#
+#     - identifier: fails
+#       name: fails
+#       url: /fails
+#       weight: 8
