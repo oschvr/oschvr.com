@@ -28,6 +28,7 @@ params:
       url: https://github.com/oschvr
   mainSections:
     - posts
+  subtitle: Cloud infrastructure engineer. System admin. Problem solver.
   contentTypeName: posts
   themeColor: green
   showMenuItems: 8
@@ -45,7 +46,8 @@ params:
   ShowReadingTime: true
   ShowShareButtons: false
   ShowCodeCopyButtons: true
-  ShowToc: false
+  ShowToc: true
+  TocSide: right
   ShowBreadCrumbs: true
   ShowPostNavLinks: true
   comments: true

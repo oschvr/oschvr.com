@@ -6,8 +6,9 @@ ShowToc: false
 ---
 
 Hey 👋, I'm _Oscar_.
+{{ .Site.Params.subtitle }}
 
-## ME
+![oschvr](https://oschvr.s3.us-west-2.amazonaws.com/2026/10/07/osoct26.png)
 
 Another citizen of this wonderful planet 🌍, that was born in Mexico 🇲🇽 {{< myAge >}} years ago.
 
@@ -53,5 +54,3 @@ I'm specialised in
 I've done a lot of on-site, remote and temporary contract jobs with clients from UK 🇬🇧, Europe 🇪🇺, Mexico 🇲🇽, but also from US 🇺🇸
 
 Meetups, events and conferences are something I'm always looking to assist or participate in. I'm always up to help the industry grow, give some career advice and meet amazing people 😎.
-
-![oschvr](https://oschvr.s3.dualstack.us-west-2.amazonaws.com/osnov.jpg)

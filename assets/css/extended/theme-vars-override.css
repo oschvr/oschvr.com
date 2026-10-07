@@ -15,13 +15,17 @@
 }
 
 :root[data-theme="dark"] {
-  --theme: #1b3c53;
-  --entry: #234c6a;
+  --theme: rgba(35, 76, 106, 0.16);
+  --entry: rgba(35, 86, 106, 0.16);
   --primary: #fff;
   --secondary: #fff;
-  --tertiary: rgba(69, 104, 130, 0.32);
+  --tertiary: rgba(40, 104, 130, 0.32);
   --content: #fff;
-  --hljs-bg: #234c6a;
-  --code-bg: #456882;
-  --border: #456882;
+  --hljs-bg: rgba(35, 76, 106, 0.16);
+  --code-bg:rgba(35, 76, 106, 0.16);
+  --border: rgba(35, 76, 106, 0.16);
+}
+
+body {
+  font-family: "Roboto Mono", monospace;
 }
