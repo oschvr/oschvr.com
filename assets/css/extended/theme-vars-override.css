@@ -40,8 +40,8 @@
   --entry: rgba(25, 58, 85, 0.35);
   --entry-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
   --primary: #fff;
-  --secondary: #fff;
-  --tertiary: rgba(40, 104, 130, 0.32);
+  --secondary: rgba(255, 255, 255, 0.85);
+  --tertiary: rgba(255, 255, 255, 0.65);
   --content: #fff;
   --hljs-bg: rgba(35, 76, 106, 0.16);
   --code-bg:rgba(35, 76, 106, 0.16);
@@ -59,7 +59,7 @@ body {
 .home-title {
   font-size: 2.4rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .home-subtitle {
@@ -102,6 +102,14 @@ body {
 
 .timeline-content p {
   margin: 0;
+}
+
+.home-certs {
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+  a {
+    text-decoration: underline;
+  }
 }
 
 .home-also {

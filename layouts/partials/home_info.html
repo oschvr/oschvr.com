@@ -21,6 +21,9 @@
     </div>
     {{- end }}
 
+    {{- with .certs }}
+    <p class="home-certs"><strong>Certs</strong>: {{ range $i, $c := . }}{{ if $i }}, {{ end }}<a href="{{ $c.url }}" target="_blank" rel="noopener">{{ $c.name }}</a>{{ end }}</p>
+    {{- end }}
     {{- with .also }}
     <p class="home-also"><strong>Also</strong>: {{ . | markdownify }}</p>
     {{- end }}

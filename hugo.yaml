@@ -22,11 +22,11 @@ params:
   homeInfoParams:
     enabled: true
     title: "Hey, I'm Oscar!"
-    subtitle: "Senior SRE/DevOps/Infra engineer. Problem solver."
+    subtitle: "senior sre/devops/infra engineer. problem solver. friendliest techie"
     timelineTitle: "me so far"
     timeline:
       - years: "1990 - 2009"
-        label: "Hello world:"
+        label: "Hello world"
         description: "Born in Mexico. Grew up happy, pulling apart PCs, chasing early internet forums and playing videogames."
       - years: "2010 - 2014"
         label: "Student → Intern"
@@ -37,6 +37,15 @@ params:
       - years: "2019 - now"
         label: "Senior SRE/DevOps/Infra"
         description: "Got very serious. Got deep into cloud native, cybersecurity and a bit of management. Managed to touch millions of lives with my work."
+    certs:
+      - name: "AWS SAA"
+        url: "https://www.credly.com/badges/5a4b9a26-c375-4e7c-bd72-65f5c611ed9e"
+      - name: "CKA"
+        url: "https://www.credly.com/badges/765a883e-2df2-4457-9c8d-701e8740f23a"
+      - name: "GCP PCA"
+        url: "https://www.credly.com/badges/6b440b35-ddf5-4ff8-baa4-fe460bb5edca"
+      - name: "KCSA"
+        url: "https://www.credly.com/badges/20dea70c-6d2d-407b-99e4-aaccf29454a8"
     also: "family man, foodie, traveler, ocassional runner, perpetual tinkerer"
   socialIcons:
     - name: linkedin
