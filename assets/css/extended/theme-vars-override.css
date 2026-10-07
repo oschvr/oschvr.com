@@ -15,8 +15,9 @@
 }
 
 :root[data-theme="dark"] {
-  --theme: rgba(35, 76, 106, 0.16);
-  --entry: rgba(35, 86, 106, 0.16);
+  --theme: #071420;
+  --entry: rgba(25, 58, 85, 0.35);
+  --entry-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
   --primary: #fff;
   --secondary: #fff;
   --tertiary: rgba(40, 104, 130, 0.32);
@@ -26,6 +27,74 @@
   --border: rgba(35, 76, 106, 0.16);
 }
 
+.post-entry {
+  box-shadow: var(--entry-shadow, none);
+}
+
 body {
   font-family: "Roboto Mono", monospace;
+}
+
+.home-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.home-subtitle {
+  font-size: 1.1rem;
+  color: var(--secondary);
+  margin-bottom: 2rem;
+}
+
+.home-timeline-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+}
+
+.home-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-bottom: 1.8rem;
+}
+
+.timeline-entry {
+  display: grid;
+  grid-template-columns: 9rem 1fr;
+  gap: 1rem;
+  align-items: baseline;
+}
+
+.timeline-years {
+  font-size: 0.8rem;
+  color: var(--secondary);
+  white-space: nowrap;
+  padding-top: 0.1rem;
+}
+
+.timeline-content {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.timeline-content p {
+  margin: 0;
+}
+
+.home-also {
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 480px) {
+  .timeline-entry {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+  }
+
+  .timeline-years {
+    font-size: 0.75rem;
+  }
 }

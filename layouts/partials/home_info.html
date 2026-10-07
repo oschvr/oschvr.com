@@ -1,26 +1,31 @@
 {{- with site.Params.homeInfoParams }}
 <article class="first-entry home-info">
-  <header class="entry-header">
-    <h1>{{ .Title | markdownify }}</h1>
-  </header>
   <div class="entry-content">
-    <h1>Hey, I'm Oscar !</h1>
-    <br/>
-    <h4>Cloud infrastructure engineer. System admin. Problem solver.</h4>
-    <br/>
-    <p>
-      I enjoy building reliable systems, automating everything, and diving deep
-      into cloud infrastructure and security.
-    </p>
-    <p>
-      But this space is more than tech. Here you'll also find personal
-      reflections, travel stories, thoughts on money, business, and life in
-      general. Expect to get to know me beyond the terminal.
-    </p>
+    <h1 class="home-title">{{ .title | default "Hey!" }}</h1>
+    {{- with .subtitle }}
+    <p class="home-subtitle">{{ . }}</p>
+    {{- end }}
+
+    {{- with .timeline }}
+    <h3 class="home-timeline-title">{{ $.Site.Params.homeInfoParams.timelineTitle | default "A brief timeline" }}</h3>
+    <div class="home-timeline">
+      {{- range . }}
+      <div class="timeline-entry">
+        <span class="timeline-years">{{ .years }}</span>
+        <span class="timeline-content">
+          {{- with .label }}<strong>{{ . }}</strong>: {{ end }}{{ .description | markdownify }}
+        </span>
+      </div>
+      {{- end }}
+    </div>
+    {{- end }}
+
+    {{- with .also }}
+    <p class="home-also"><strong>Also</strong>: {{ . | markdownify }}</p>
+    {{- end }}
   </div>
   <footer class="entry-footer">
-    {{ partial "social_icons.html" (dict "align"
-    site.Params.homeInfoParams.AlignSocialIconsTo) }}
+    {{ partial "social_icons.html" (dict "align" site.Params.homeInfoParams.AlignSocialIconsTo) }}
   </footer>
 </article>
 {{- end -}}

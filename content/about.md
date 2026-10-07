@@ -6,7 +6,6 @@ ShowToc: false
 ---
 
 Hey 👋, I'm _Oscar_.
-{{ .Site.Params.subtitle }}
 
 ![oschvr](https://oschvr.s3.us-west-2.amazonaws.com/2026/10/07/osoct26.png)
 

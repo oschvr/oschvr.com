@@ -21,14 +21,34 @@ services:
 params:
   homeInfoParams:
     enabled: true
+    title: "Hey, I'm Oscar!"
+    subtitle: "Senior SRE/DevOps/Infra engineer. Problem solver."
+    timelineTitle: "me so far"
+    timeline:
+      - years: "1990 - 2009"
+        label: "Hello world:"
+        description: "Born in Mexico. Grew up happy, pulling apart PCs, chasing early internet forums and playing videogames."
+      - years: "2010 - 2014"
+        label: "Student → Intern"
+        description: "Got the intro and got into computers-ish. So I can make a career out of this, eh?. Small stuff but I'm super curious."
+      - years: "2014 - 2019"
+        label: "Sysadmin → DevOps"
+        description: "Got slightly more serious. First jobs developing software and managing servers. For small to medium projects. Don't break prod, got it."
+      - years: "2019 - now"
+        label: "Senior SRE/DevOps/Infra"
+        description: "Got very serious. Got deep into cloud native, cybersecurity and a bit of management. Managed to touch millions of lives with my work."
+    also: "family man, foodie, traveler, ocassional runner, perpetual tinkerer"
   socialIcons:
     - name: linkedin
       url: https://www.linkedin.com/in/oschvr/
     - name: github
       url: https://github.com/oschvr
+    - name: mastodon
+      url: https://mastodon.online/deck/@oschvr
+    - name: cv
+      url: /cv/os.pdf
   mainSections:
     - posts
-  subtitle: Cloud infrastructure engineer. System admin. Problem solver.
   contentTypeName: posts
   themeColor: green
   showMenuItems: 8
