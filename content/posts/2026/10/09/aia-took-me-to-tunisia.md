@@ -14,6 +14,8 @@ categories:
 description: "A TLS Handshake hidden mechanism took me to Tunisia"
 ---
 
+A TLS Handshake hidden mechanism confused everybody so much and I found out why.
+
 I just spent last week in Tunis, Tunisia 🇹🇳, helping a government organisation understand and troubleshoot a network/connectivity issue for what was described as "a faulty HTTPS connection". I got to work closely with SSL/TLS (`openssl`), certificate chains and ultimately, made me understand a bit better the role of certificate authority. But what was quite surprising to me was that I got to learn a piece of magic inside the TLS handshake
 
 I came to write about it in hopes of making it more clear for myself; and hopefully for others too !
