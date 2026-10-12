@@ -112,6 +112,10 @@ body {
   }
 }
 
+.post-content ol {
+    margin-left: 1em;
+}
+
 .home-also {
   font-size: 0.95rem;
   margin-top: 0.5rem;
